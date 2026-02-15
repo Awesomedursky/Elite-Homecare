@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "./components/Navbar/nav";
+import { Footer } from "./components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Elite Homecare",
@@ -18,11 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${font.className} antialiased`}>
-        <p>Header</p>
+        <Navbar />
         {children}
-        <p>Footer</p>
+        <Footer />
       </body>
     </html>
   );

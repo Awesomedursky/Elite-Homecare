@@ -6,6 +6,8 @@
   --text-color: #1b2a4e;
   --primary: #003485;
   --p700: #0e3d91;
+  --dark-blue: #002270;
+  --secondary: #e02428;
 }
 
 @theme inline {
@@ -14,15 +16,16 @@
   --primary: var(--primary);
   --text-color: var(--text-color);
   --p700: var(--p700);
-
+  --secondary: var(--secondary);
+  --dark-blue: var(--dark-blue);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a; */
+    /* --foreground: #ededed; */
   }
 }
 
@@ -30,4 +33,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
