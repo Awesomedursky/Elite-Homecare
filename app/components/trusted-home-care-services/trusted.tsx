@@ -92,6 +92,17 @@ export const TrustedHomeCareServices = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl px-6 mx-auto">
+        {/* Title Section */}
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-(--dark-blue) font-bold text-3xl md:text-[40px]">
+            Our Trusted{" "}
+            <span className="text-(--secondary) italic">Homecare</span> Services
+          </h2>
+          <p className="text-[#64748B] text-lg max-w-2xl mx-auto">
+            Our services are as unique as the individuals we serve. We create
+            custom plans that adapt to your evolving needs.
+          </p>
+        </div>
         {/* Cards */}
         <div
           ref={scrollRef}
@@ -163,7 +174,6 @@ export const TrustedHomeCareServices = () => {
             );
           })}
         </div>
-
         {/* Footer */}
         <div className="mt-2 flex justify-between items-center pl-5">
           <div className="flex gap-4">
