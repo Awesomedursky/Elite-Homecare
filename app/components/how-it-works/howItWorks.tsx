@@ -19,7 +19,10 @@ export const HowItWorks = () => {
     },
   ];
   return (
-    <div className="relative w-full py-20 px-10 overflow-hidden">
+    <div
+      className="relative w-full py-20 px-10 overflow-hidden scroll-mt-20"
+      id="how-it-works"
+    >
       {/* Layer 1: Base Image */}
       <div className="absolute inset-0 -z-10 ">
         <Image
@@ -30,13 +33,13 @@ export const HowItWorks = () => {
         />
       </div>
 
-      <div className="max-w-7xl flex flex-col mx-auto space-y-12">
+      <div className="max-w-7xl flex flex-col mx-auto space-y-6 lg:space-y-12">
         {/* Title Section */}
         <div className="text-center md:space-y-4">
-          <h3 className="text-[#001953] font-bold text-3xl md:text-[40px]">
+          <h3 className="text-[#001953] font-bold text-[28px] lg:text-3xl md:text-[40px]">
             How it Works
           </h3>
-          <p className="text-[#64748B] text-lg font-medium leading-tight">
+          <p className="text-[#64748B] text-sm  lg:text-lg font-medium lg:leading-tight">
             We make the process simple, so you can focus on what matters most,
             <br />
             <span className="text-red-600">your loved one’s care.</span>
@@ -46,26 +49,26 @@ export const HowItWorks = () => {
         <div className="relative w-full">
           {/* The Connecting Line Background */}
           {/* Positioned at the top to align specifically with the balls' vertical center */}
-          <div className="absolute top-7.5 left-0 w-full h-0.5 bg-[#E2E8F0] z-0" />
+          <div className="absolute top-7.5 left-0 h-full w-0.5 lg:w-full lg:h-0.5 bg-[#E2E8F0] z-0" />
 
           {/* Integrated Ball and Details Container */}
-          <div className="relative z-10 flex justify-around gap-x-21 items-start">
+          <div className="relative z-10 flex flex-col lg:flex-row justify-around gap-y-5 lg:gap-x-21 items-start top-10 lg:top-0">
             {items.map(({ title, subtitle }, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center gap-y-3 sm:gap-y-4 lg:gap-y-6 "
+                className="flex flex-col lg:items-center lg:text-center gap-y-4 sm:gap-y-4 lg:gap-y-6 "
               >
                 {/* Progress Ball */}
-                <div className="flex items-center justify-center rounded-full size-15 bg-[#FFCDD2] text-(--dark-blue) text-2xl font-extrabold ">
+                <div className="absolute lg:relative flex -left-5  items-center justify-center rounded-full size-10 lg:size-15 bg-[#FFCDD2] text-(--dark-blue) text-xl lg:text-2xl font-extrabold ">
                   {idx + 1}
                 </div>
 
                 {/* Details Section */}
-                <div className="space-y-3">
-                  <h3 className=" font-bold text-lg text-(--dark-blue)">
+                <div className=" space-y-1.5 lg:space-y-3 ml-10 lg:ml-0">
+                  <h3 className=" font-bold text-sm lg:text-lg text-(--dark-blue)">
                     {title}
                   </h3>
-                  <p className="text-[#64748B] text-sm font-medium leading-relaxed px-4">
+                  <p className="text-[#64748B] text-xs lg:text-sm font-medium leading-relaxed lg:px-4">
                     {subtitle}
                   </p>
                 </div>

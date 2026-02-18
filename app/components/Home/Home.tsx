@@ -15,16 +15,26 @@ export const HeroPage = () => {
   return (
     <>
       <HeroSection />
-      <section className=" border-b border-[#E2E8F0] w-full px-3 sm:px-6 py-10">
-        <div className="flex mx-auto max-w-7xl justify-between">
-          {sectionItems.map((i, idx) => (
-            <p key={idx} className=" flex items-center gap-1.5">
-              <span>
-                <Image src={i?.icon} alt={i.name} />
-              </span>
-              {i.name}
-            </p>
-          ))}
+      <section className=" border-b border-[#E2E8F0] w-full px-3 sm:px-6 py-5 lg:py-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-center justify-between gap-x-10 overflow-x-auto scrollbar-hide">
+            {sectionItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-x-2 md:gap-x-3 whitespace-nowrap cursor-pointer transition-transform duration-200 hover:scale-105"
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.name}
+                  className="size-5 lg:size-8 object-contain"
+                />
+
+                <p className="font-semibold text-sm sm:text-base md:text-lg text-(--text-color)">
+                  {item.name}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

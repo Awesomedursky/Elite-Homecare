@@ -1,3 +1,4 @@
+"use client";
 import { CallToAction } from "./components/call-to-action/CallToAction";
 import { HeroPage } from "./components/Home/Home";
 import { HowItWorks } from "./components/how-it-works/howItWorks";
