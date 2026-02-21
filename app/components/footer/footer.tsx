@@ -10,16 +10,16 @@ import message from "@/public/images/message.svg";
 import { useEffect, useState } from "react";
 import { BsArrowUp } from "react-icons/bs";
 export const Footer = () => {
-  const [showScroll, setShowScroll] = useState(false);
+  // const [showScroll, setShowScroll] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScroll(window.scrollY > 300);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setShowScroll(window.scrollY > 300);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -30,19 +30,19 @@ export const Footer = () => {
   const quicklinks = [
     {
       name: "Our Services",
-      href: "#",
+      href: "/#services",
     },
     {
       name: "How it Works",
-      href: "#",
+      href: "/#how-it-works",
     },
     {
       name: "About Us",
-      href: "#",
+      href: "/about-us",
     },
     {
       name: "Careers",
-      href: "#",
+      href: "/careers",
     },
   ];
 
@@ -50,12 +50,12 @@ export const Footer = () => {
     {
       icon: donate,
       name: "Donate",
-      href: "#",
+      href: "/donate",
     },
     {
       icon: request,
       name: "Request Consultation",
-      href: "#",
+      href: "/contact-us",
     },
     {
       icon: phone,

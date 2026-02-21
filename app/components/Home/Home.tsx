@@ -1,3 +1,4 @@
+"use client";
 import { HeroSection } from "../hero/hero";
 import check from "@/public/images/check.svg";
 import calender from "@/public/images/calender.svg";
@@ -12,6 +13,7 @@ export const HeroPage = () => {
     { icon: time, name: "24/7 Support Available" },
     { icon: help, name: "Heart-Led Compassion" },
   ];
+
   return (
     <>
       <HeroSection />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import caregiverBeforeJob from "@/public/images/care-giver-before-application.png";
 import caregiverhappy from "@/public/images/imporeveItwithCaregiver.png";
 
@@ -21,9 +22,11 @@ export const JoinOurCareTeam = () => {
         </div>
 
         <div className="flex items-center">
-          <button className="bg-(--dark-blue) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)] hover:bg-position-[100%_0%] hover:shadow-xl text-white py-2 px-4 md:px-6 md:py-4 w-57.75 rounded-[20px] font-semibold shadow-md transition-all  duration-300 cursor-pointer">
-            Submit Application
-          </button>
+          <Link href="/careers">
+            <button className="bg-(--dark-blue) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)] hover:bg-position-[100%_0%] hover:shadow-xl text-white py-2 px-4 md:px-6 md:py-4 w-57.75 rounded-[20px] font-semibold shadow-md transition-all  duration-300 cursor-pointer">
+              Submit Application
+            </button>
+          </Link>
         </div>
       </div>
 

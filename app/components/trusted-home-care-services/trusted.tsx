@@ -90,7 +90,7 @@ export const TrustedHomeCareServices = () => {
   ];
 
   return (
-    <section className="py-10 lg:py-20 bg-white">
+    <section className="py-10 lg:py-20 bg-white scroll-mt-20" id="services">
       <div className="max-w-7xl px-6 mx-auto">
         {/* Title Section */}
         <div className="text-center mb-4 md:mb-8 lg:mb-16 space-y-3 lg:space-y-4">
@@ -107,7 +107,7 @@ export const TrustedHomeCareServices = () => {
         <div
           ref={scrollRef}
           className={` 
-            ${activeCards.size == sliderItem.length ? "lg:grid flex lg:grid-cols-5" : "flex"} gap-3  lg:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth p-2 lg:p-5 `}
+            ${activeCards.size == sliderItem.length ? "lg:grid flex lg:grid-cols-5" : "flex"} gap-3  lg:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth p-2 lg:p-5 scroll-mt-20 `}
         >
           {sliderItem.map(({ id, icon, image, title, subtitle }) => {
             const isActive = activeCards.has(id);

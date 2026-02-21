@@ -1,9 +1,15 @@
 import Image from "next/image";
 import HeroImage from "@/public/images/hero-image.png";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const HeroSection = () => {
+  const pathname = usePathname();
+  const path = pathname.split("/")[1];
   return (
-    <section className="relative h-[88vh] w-full flex items-center overflow-hidden justify-center scroll-mt-20">
+    <section
+      className={`relative h-[88vh] w-full flex ${path === "about-us" ? " items-center lg:items-end lg:py-[5%]" : "items-center"} overflow-hidden justify-center scroll-mt-20`}
+    >
       {/* 1. Background Image using Next.js Image Component */}
       <div className="absolute inset-0 -z-10 ">
         <Image
@@ -20,29 +26,51 @@ export const HeroSection = () => {
       </div>
 
       {/* 3. Hero Content */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex justify-center items-center text-center h-full">
-        <div className=" lg:max-w-4xl">
-          <h1 className="text-white font-semibold text-3xl sm:text-4xl lg:text-[54px] md:text-[64px] mb-6 lg:leading-[1.3]">
-            Compassionate Home Care
-            <br /> in Northeast Ohio
-          </h1>
-
-          <p className="text-gray-200 font-medium text-sm sm:text-base md:text-lg mb-10  leading-relaxed ">
-            Expert care tailored to your family's unique needs. We provide peace
-            of mind <br /> for seniors and their loved ones through dedicated,
-            heart-led service.
-          </p>
-
-          <div className="flex flex-wrap gap-4 items-center justify-center">
-            <button className="px-4 py-3 sm:px-8 sm:py-4 bg-(--p700) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] hover:shadow-xl text-white  rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer">
-              Request a Free Consultation
-            </button>
-            <button className="bg-white  transform hover:bg-[#FFEBEE] px-6 py-3   sm:px-6 sm:py-4 lg:w-63  rounded-full text-(--primary) font-bold transition-all cursor-pointer">
-              Our Services
-            </button>
+      {path === "about-us" ? (
+        <div className="max-w-7xl mx-auto px-3 sm:px-8 xl:px-0 flex flex-col lg:flex-row gap-x-10 gap-y-3 lg:gap-y-0 items-center lg:items-start justify-between w-full">
+          <div className="space-y-4 text-center lg:text-left lg:w-xl xl:min-w-2xl">
+            <h3 className=" font-bold text-xl text-(--secondary) lg:text-white  mx-auto lg:mx-0">
+              About Us
+            </h3>
+            <h1 className="text-white font-semibold text-3xl sm:text-4xl lg:text-[54px] leading-[1.3]">
+              Care You Can Trust, Right{" "}
+              <span className="lg:text-(--secondary)"> at Home</span>
+            </h1>
+          </div>
+          <div className="lg:place-self-end lg:py-6 lg:max-w-sm xl:max-w-lg">
+            <p className=" text-sm text-center md:text-lg font-medium leading-7 text-white lg:text-justify">
+              At My Elite Home Care, we provide compassionate, reliable home
+              care for individuals and families across Northeast Ohio. Our goal
+              is simple: to help people live safely, comfortably, and with
+              dignity in the place they call home.{" "}
+            </p>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex justify-center items-center text-center h-full">
+          <div className=" lg:max-w-4xl">
+            <h1 className="text-white font-semibold text-3xl sm:text-4xl lg:text-[54px] md:text-[64px] mb-6 lg:leading-[1.3]">
+              Compassionate Home Care
+              <br /> in Northeast Ohio
+            </h1>
+
+            <p className="text-gray-200 font-medium text-sm sm:text-base md:text-lg mb-10  leading-relaxed ">
+              Expert care tailored to your family's unique needs. We provide
+              peace of mind <br /> for seniors and their loved ones through
+              dedicated, heart-led service.
+            </p>
+
+            <div className="flex flex-wrap gap-4 items-center justify-center">
+              <button className="px-4 py-3 sm:px-8 sm:py-4 bg-(--p700) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] hover:shadow-xl text-white  rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer">
+                <Link href="/contact-us">Request a Free Consultation</Link>
+              </button>
+              <button className="bg-white  transform hover:bg-[#FFEBEE] px-6 py-3   sm:px-6 sm:py-4 lg:w-63  rounded-full text-(--primary) font-bold transition-all cursor-pointer">
+                <Link href="/#services">Our Services</Link>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
