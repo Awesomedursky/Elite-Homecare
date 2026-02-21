@@ -27,7 +27,7 @@ export const Toast = ({
   return (
     <div
       role="alert"
-      className={`fixed top-30 right-6 z-[1000] flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg ${
+      className={`fixed top-30 right-6 z-1000 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg ${
         isSuccess ? "bg-green-600 text-white" : "bg-red-600 text-white"
       }`}
     >

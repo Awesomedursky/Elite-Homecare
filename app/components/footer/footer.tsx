@@ -74,9 +74,11 @@ export const Footer = () => {
       {/* Scroll To Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 bg-(--secondary) hover:scale-110 text-white p-4 rounded-full shadow-xl transition-all duration-300"
+        className="fixed bottom-2 right-2 z-50 bg-(--secondary) hover:scale-110 text-white 
+             p-2 sm:p-3 lg:p-4 
+             rounded-full shadow-xl transition-all duration-300"
       >
-        <BsArrowUp size={20} />
+        <BsArrowUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
       </button>
 
       <div className="mx-auto  sm:px-6  2xl:max-w-7xl flex justify-between lg:pt-20 pb-10 py-10 flex-col md:flex-row gap-5 sm:gap-10 md:gap-0 px-2">
