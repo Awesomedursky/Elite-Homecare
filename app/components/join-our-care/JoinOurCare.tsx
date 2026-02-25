@@ -22,10 +22,11 @@ export const JoinOurCareTeam = () => {
         </div>
 
         <div className="flex items-center">
-          <Link href="/careers">
-            <button className="bg-(--dark-blue) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)] hover:bg-position-[100%_0%] hover:shadow-xl text-white py-2 px-4 md:px-6 md:py-4 w-57.75 rounded-[20px] font-semibold shadow-md transition-all  duration-300 cursor-pointer">
-              Submit Application
-            </button>
+          <Link
+            href="/careers"
+            className="bg-(--dark-blue) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)] hover:bg-position-[100%_0%]  text-white py-2 px-4 md:px-6 md:py-4 w-57.75 rounded-[20px] font-semibold transition-all  duration-300 cursor-pointer"
+          >
+            Submit Application
           </Link>
         </div>
       </div>
@@ -36,7 +37,6 @@ export const JoinOurCareTeam = () => {
           <Image
             src={caregiverBeforeJob}
             alt="Caregiver before getting a job"
-            fill
             priority
             className="object-cover grayscale"
           />

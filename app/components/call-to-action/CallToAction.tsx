@@ -32,13 +32,12 @@ export const CallToAction = () => {
         </p>
       </div>
       <div className="flex justify-center items-center flex-col lg:flex-row gap-x-4 z-10 gap-y-4">
-        <button className=" bg-[#D31A21] rounded-[20px] py-2 px-3 lg:py-4 lg:px-6 text-lg font-medium text-white cursor-pointer hover:bg-[#D31A21]/80 duration-300 transition-all">
-          <Link href="/contact-us">Request Your Consultation</Link>
-        </button>
-
-        {/* <button className=" border-[#64748B] border rounded-[20px] py-2 px-3 lg:py-4 lg:px-6 text-lg font-medium text-white w-61.5 cursor-pointer hover:scale-105 duration-300 transition-all ">
-          Call Us Today
-        </button> */}
+        <Link
+          href="/contact-us"
+          className=" bg-[#D31A21] rounded-[20px] py-2 px-3 lg:py-4 lg:px-6 text-lg font-medium text-white cursor-pointer hover:bg-[#D31A21]/80 duration-300 transition-all"
+        >
+          Request Your Consultation
+        </Link>
 
         <button
           onClick={handleCallClick}

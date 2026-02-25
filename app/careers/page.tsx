@@ -9,6 +9,7 @@ import { Input } from "@/app/components/atoms/Input";
 import { Textarea } from "@/app/components/atoms/Textarea";
 import { Select } from "@/app/components/atoms/Select";
 import { Toast } from "@/app/components/atoms/Toast";
+import { Button } from "../components/atoms/CustomButton";
 
 const POSITION_OPTIONS = [
   { value: "pca-caregiver", label: "PCA / Caregiver" },
@@ -115,19 +116,19 @@ export default function CareersPage() {
       <section className="md:py-8 lg:py-12">
         <div className="max-w-7xl mx-auto px-3 py-8 sm:py-0 sm:px-6">
           <div className="bg-white">
-            <div className="md:flex gap-5 lg:gap-10 lg:gap-12 items-start ">
+            <div className="md:flex gap-5 lg:gap-10 items-start ">
               {/* Left: Image and description */}
               <div className="hidden lg:block lg:w-[40%] md:h-[65vh] flex flex-col lg:gap-y-10">
                 <div className="relative overflow-hidden bg-[#e8f4fc]  rounded-4xl md:h-[90%] lg:full">
                   <Image
                     src={caregiverBeforeJob}
                     alt="caregiver job"
-                    fill
+                    // fill
                     className=" object-cover object-top"
                     placeholder="blur"
                   />
                 </div>
-                <p className="text-[#64748B] md:text-sm lg:text-base leading-relaxed font-[500] mt-5">
+                <p className="text-[#64748B] md:text-sm lg:text-base leading-relaxed font-medium mt-5">
                   If you&apos;re compassionate, dependable, and passionate about
                   caring for others, we&apos;d love to hear from you. Apply and
                   take the first step toward meaningful work.
@@ -225,40 +226,7 @@ export default function CareersPage() {
                     By submitting, you agree to our recruitment privacy policy.
                   </p>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 bg-(--primary) hover:bg-(--dark-blue) disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 min-h-[52px]"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <svg
-                          className="animate-spin h-5 w-5 text-white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          />
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          />
-                        </svg>
-                        Submitting...
-                      </>
-                    ) : (
-                      "Submit Application"
-                    )}
-                  </button>
+                  <Button text="Submit Application" loading={isSubmitting} />
                 </form>
               </div>
             </div>

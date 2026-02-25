@@ -61,12 +61,18 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 items-center justify-center">
-              <button className="px-4 py-3 sm:px-8 sm:py-4 bg-(--p700) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] hover:shadow-xl text-white  rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer">
-                <Link href="/contact-us">Request a Free Consultation</Link>
-              </button>
-              <button className="bg-white  transform hover:bg-[#FFEBEE] px-6 py-3   sm:px-6 sm:py-4 lg:w-63  rounded-full text-(--primary) font-bold transition-all cursor-pointer">
-                <Link href="/#services">Our Services</Link>
-              </button>
+              <Link
+                href="/contact-us"
+                className="px-4 py-3 sm:px-8 sm:py-4 bg-(--p700) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%]  text-white  rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer"
+              >
+                Request a Free Consultation
+              </Link>
+              <Link
+                href="/#services"
+                className="bg-white  transform hover:bg-[#FFEBEE] px-6 py-3   sm:px-6 sm:py-4 lg:w-63  rounded-full text-(--primary) font-bold transition-all cursor-pointer"
+              >
+                Our Services
+              </Link>
             </div>
           </div>
         </div>

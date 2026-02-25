@@ -136,7 +136,7 @@ export const Footer = () => {
                     <Image
                       src={i.icon}
                       alt="icon"
-                      className="shrink-0 size-5"
+                      className="shrink-0 size-5 w-auto"
                     />
                   </span>
                   {i.name}

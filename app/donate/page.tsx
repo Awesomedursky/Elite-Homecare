@@ -1,5 +1,161 @@
+"use client";
+import Image from "next/image";
+import supportImage from "@/public/images/support.png";
+import supportLogo from "@/public/images/supportLogo.png";
+import { Input } from "../components/atoms/Input";
+import { useCallback, useState } from "react";
+import { MultiSelect } from "../components/atoms/MultiSelect";
+import { Button } from "../components/atoms/CustomButton";
+import { Textarea } from "../components/atoms/Textarea";
+
 const Donate = () => {
-  return <div className="max-w-7xl w-full mx-auto">Donate</div>;
+  const HOW_WOULD_YOU_LIKE_TO_HELP = [
+    { value: "volunteer-your-time", label: "Volunteer your time" },
+    { value: "social-media-sharing", label: "Social Media Sharing" },
+    { value: "business-partnership", label: "Business Partnership" },
+    { value: "other-inquiries", label: "Other Inquiries" },
+  ];
+
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [howToHelp, setHowToHelp] = useState<string[]>([]);
+  const [tellUsMore, setTellUsMore] = useState("");
+  const [toast, setToast] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
+
+  const showToast = useCallback(
+    (message: string, type: "success" | "error") => {
+      setToast({ message, type });
+    },
+    [],
+  );
+
+  const resetForm = useCallback(() => {
+    setFullName("");
+    setPhone("");
+    setEmail("");
+    setHowToHelp([]);
+    setTellUsMore("");
+  }, []);
+  return (
+    <section className="max-w-7xl w-full mx-auto lg:px-3   scroll-mt-20">
+      <div className="lg:rounded-[40px] lg:border border-[#D8E0E9] my-6 drop-shadow-[0_4px_4px_rgba(216,224,233,0.5)] flex flex-col lg:flex-row w-full justify-between gap-5 lg:gap-x-10 overflow-hidden lg:h-[75vh]">
+        {/* LEFT SIDE — IMAGE */}
+        <div
+          className="
+      relative
+      flex flex-col lg:justify-end
+      w-full
+      h-[40vh] sm:h-80 md:h-[50vh]
+      lg:h-auto
+      lg:w-117.5
+      lg:min-w-[35%] lg:max-w-[40%]
+      p-6 sm:p-8 lg:p-10
+    "
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src={supportImage}
+              alt="Support Our Mission"
+              fill
+              placeholder="blur"
+              className=""
+              priority
+            />
+          </div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-[rgba(26,53,91,0.6)] mix-blend-multiply -z-10" />
+
+          {/* Text Content */}
+          <div className="relative text-white space-y-3 z-10">
+            <Image
+              src={supportLogo}
+              alt="Support Logo"
+              width={30}
+              height={30}
+              className="w-auto h-8 max-lg:hidden"
+            />
+
+            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+              Support Our Mission
+            </div>
+
+            <p className="text-sm text-white/90 text-justify max-lg:hidden">
+              Join us in strengthening Northeast Ohio through care and
+              companionship. Together, we can make a difference for our seniors.
+            </p>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE — FORM */}
+        <div className="w-full px-3 lg:p-10 xl:p-12 lg:overflow-y-scroll scrollbar-hide">
+          <div>
+            <h3 className="text-(--dark-blue) font-bold text-base sm:text-xl md:text-2xl lg:text-4xl sm:mb-4 mb-1">
+              I Want to Help
+            </h3>
+
+            <p className="text-[#64748B] text-xs sm:text-sm md:text-base sm:mb-8 mb-4 font-medium text-justify md:text-left">
+              Complete the form below and we’ll be in touch soon. We value every
+              minute of support you can offer.
+            </p>
+          </div>
+
+          <form className="space-y-6">
+            <Input
+              id="fullName"
+              label="Full Name"
+              type="text"
+              value={fullName}
+              onChange={setFullName}
+              placeholder="So we know who we're speaking with"
+              required
+            />
+
+            <Input
+              id="phone"
+              label="Phone Number"
+              type="tel"
+              value={phone}
+              onChange={setPhone}
+              placeholder="Preferred for quicker follow-up"
+            />
+
+            <Input
+              id="email"
+              label="Email Address"
+              type="email"
+              value={email}
+              onChange={setEmail}
+              placeholder="For confirmations or additional details"
+              required
+            />
+
+            <MultiSelect
+              label="How would you like to help?"
+              placeholder="Select all that applies"
+              options={HOW_WOULD_YOU_LIKE_TO_HELP}
+              value={howToHelp}
+              onChange={setHowToHelp}
+            />
+
+            <Textarea
+              id="tellUsMore"
+              label="Tell Us More"
+              value={tellUsMore}
+              onChange={setTellUsMore}
+            />
+
+            <Button text="Request Free Consultation" />
+          </form>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Donate;

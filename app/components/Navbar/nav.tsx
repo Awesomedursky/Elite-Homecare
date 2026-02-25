@@ -67,7 +67,7 @@ export const Navbar = () => {
   return (
     <nav className="sticky top-0 z-1000 bg-background/80 backdrop-blur-md border-b border-gray-100 scroll-mt-20">
       <div className=" mx-auto  lg:px-0 max-w-7xl">
-        <div className="flex justify-between items-center h-[8vh] lg:h-[12vh] px-3 xl:px-0">
+        <div className="flex justify-between items-center h-[8vh] lg:h-[12vh] px-3 ">
           {/* Logo */}
           <Link href="/">
             <div className=" flex items-center h-16  lg:h-20 ">
@@ -121,9 +121,12 @@ export const Navbar = () => {
 
           {/* Call to Action */}
           <div className="lg:flex items-center hidden">
-            <button className="bg-(--primary) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] hover:shadow-xl text-white px-6 py-2.5 rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer">
-              <Link href="/contact-us">Request Consultation</Link>
-            </button>
+            <Link
+              href="/contact-us"
+              className="bg-(--primary) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] text-white px-6 py-2.5 rounded-full font-semibold  transition-all  duration-300 cursor-pointer"
+            >
+              Request Consultation
+            </Link>
           </div>
 
           <div className="block lg:hidden">
@@ -152,11 +155,13 @@ export const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <button className="bg-(--primary) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] hover:shadow-xl text-white px-6 py-2.5 rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer">
-            <Link href="/contact-us" onClick={() => setIsMobileMenuOpen(false)}>
-              Request Consultation
-            </Link>
-          </button>
+          <Link
+            className="bg-(--primary) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] hover:shadow-xl text-white px-6 py-2.5 rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer"
+            href="/contact-us"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Request Consultation
+          </Link>
         </div>
       </div>
     </nav>

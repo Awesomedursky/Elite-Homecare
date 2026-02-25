@@ -79,9 +79,12 @@ export const HowToSupport = () => {
                     Share our Mission <TbShare />
                   </Link>
                 ) : (
-                  <button className="bg-(--dark-blue) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)] hover:bg-position-[100%_0%] hover:shadow-xl text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3  lg:py-4 rounded-xl md:rounded-[20px] font-semibold shadow-md transition-all  duration-300 cursor-pointer">
+                  <Link
+                    href="/donate"
+                    className="bg-(--dark-blue) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)] hover:bg-position-[100%_0%] hover:shadow-xl text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3  lg:py-4 rounded-xl md:rounded-[20px] font-semibold shadow-md transition-all  duration-300 cursor-pointer block"
+                  >
                     Contribute Today
-                  </button>
+                  </Link>
                 )}
               </div>
             </div>

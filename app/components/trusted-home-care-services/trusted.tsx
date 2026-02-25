@@ -106,7 +106,7 @@ export const TrustedHomeCareServices = () => {
         {/* Cards */}
         <div
           ref={scrollRef}
-          className={` 
+          className={`
             ${activeCards.size == sliderItem.length ? "lg:grid flex lg:grid-cols-5" : "flex"} gap-3  lg:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth p-2 lg:p-5 scroll-mt-20 `}
         >
           {sliderItem.map(({ id, icon, image, title, subtitle }) => {
@@ -138,13 +138,13 @@ export const TrustedHomeCareServices = () => {
 
                 {/* Content */}
                 <div
-                  className={`absolute z-20 bg-[linear-gradient(180deg,rgba(0,52,133,0.12)_14.04%,#003991_114.49%),linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))]    flex items-center lg:justify-center    transition-all duration-500 
+                  className={`absolute z-20 bg-[linear-gradient(180deg,rgba(0,52,133,0.12)_14.04%,#003991_114.49%),linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))]    flex items-center lg:justify-center    transition-all duration-500
     ${
       isActive
         ? `  block w-xs lg:w-lg lg:text-center lg:h-24
-          top-full left-0 
+          top-full left-0
           -rotate-90
-          origin-top-left 
+          origin-top-left
           p-6
         `
         : "bottom-0 left-0 right-0 p-1.5 lg:p-8 gap-1.5 lg:gap-4 items-start"
