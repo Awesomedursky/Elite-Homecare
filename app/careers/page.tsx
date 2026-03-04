@@ -118,7 +118,7 @@ export default function CareersPage() {
           <div className="bg-white">
             <div className="md:flex gap-5 lg:gap-10 items-start ">
               {/* Left: Image and description */}
-              <div className="hidden lg:block lg:w-[40%] md:h-[65vh] flex flex-col lg:gap-y-10">
+              <div className="hidden lg:flex lg:w-[40%] md:h-[65vh]  flex-col lg:gap-y-10">
                 <div className="relative overflow-hidden bg-[#e8f4fc]  rounded-4xl md:h-[90%] lg:full">
                   <Image
                     src={caregiverBeforeJob}
