@@ -65,17 +65,19 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-1000 bg-background/80 backdrop-blur-md border-b border-gray-100 scroll-mt-20">
-      <div className=" mx-auto  lg:px-0 max-w-7xl">
-        <div className="flex justify-between items-center h-[8vh] lg:h-[12vh] px-3 ">
+    <nav className="sticky top-0 z-1000 bg-background/80 backdrop-blur-md  scroll-mt-20 drop-shadow-2xl">
+      <div className=" mx-auto px-4 md:px-10  xl:px-0 max-w-7xl">
+        <div
+          className={`flex  justify-between items-center h-[8vh] lg:h-20.5   ${isMobileMenuOpen ? " shadow-[0_8px_20px_rgba(0,0,0,0.06)] drop-shadow-2xl" : ""}`}
+        >
           {/* Logo */}
           <Link href="/">
-            <div className=" flex items-center h-16  lg:h-20 ">
+            <div className="  ">
               <Image
                 src={width !== null && width > 1024 ? logo : logoSmall}
                 alt="Elite-Homecare"
                 priority
-                className="w-auto h-24 lg:h-40"
+                className="w-auto h-24 lg:h-34"
               />
             </div>
           </Link>
@@ -89,7 +91,7 @@ export const Navbar = () => {
               >
                 <Link
                   href={item.href}
-                  className="text-(--text-color) hover:text-(--primary) font-medium transition-colors duration-300 flex items-center text-sm lg:text-base"
+                  className="text-(--text-color) hover:text-(--primary) font-medium transition-colors duration-300 flex items-center text-sm xl:text-base"
                 >
                   {item.name}
                   {item.submenu && (
@@ -123,7 +125,7 @@ export const Navbar = () => {
           <div className="lg:flex items-center hidden">
             <Link
               href="/contact-us"
-              className="bg-(--primary) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] text-white px-6 py-2.5 rounded-full font-semibold  transition-all  duration-300 cursor-pointer"
+              className="bg-(--primary) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%] text-white  px-4 xl:px-6 py-2 xl:py-2.5 rounded-full font-semibold  transition-all  duration-300 cursor-pointer text-sm xl:text-base"
             >
               Request Consultation
             </Link>
@@ -132,25 +134,25 @@ export const Navbar = () => {
           <div className="block lg:hidden">
             {isMobileMenuOpen ? (
               <button onClick={toggleMobileMenu}>
-                <RxCross1 size={30} />
+                <RxCross1 size={20} />
               </button>
             ) : (
               <button onClick={toggleMobileMenu}>
-                <GiHamburgerMenu size={30} />
+                <GiHamburgerMenu size={20} />
               </button>
             )}
           </div>
         </div>
         {/* Mobile Menu */}
         <div
-          className={`overflow-hidden left-0   w-full flex flex-col items-center bg-[#FFFFFF] gap-10 justify-between" ${isMobileMenuOpen ? " h-[90vh]" : "h-0"} transition-all duration-300 ease-in-out`}
+          className={`overflow-hidden left-0    w-full flex flex-col items-center   bg-[#FFFFFF] gap-8 justify-between" ${isMobileMenuOpen ? " h-screen pt-12" : "h-0"} transition-all duration-300 ease-in-out`}
         >
           {navItemsMobile?.map((item) => (
             <Link
               onClick={() => setIsMobileMenuOpen(false)}
               key={item.name}
               href={item.href}
-              className="text-text-navy hover:text-primary"
+              className="text-[rgba(0,19,63,1)] font-medium text-base"
             >
               {item.name}
             </Link>

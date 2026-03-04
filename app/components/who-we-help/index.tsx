@@ -7,15 +7,29 @@ export const WhoWeHelp = () => {
   const whoWeHelp = [
     {
       title: "Seniors Citizens",
-      subtitle:
-        "Dedicated support for aging in place with dignity, independence, and safety in the comfort of home.",
+      subtitle: (
+        <p>
+          Dedicated support for aging in <br className="max-sm:hidden block" />{" "}
+          place with dignity, independence,
+          <br className="max-sm:hidden block" /> and safety in the comfort of
+          <br className="max-sm:hidden block" /> home
+        </p>
+      ),
       image: man,
       color: "#B4D5ED",
     },
     {
       title: "Families",
-      subtitle:
-        "We step in so you can take a well-deserved break, with the comfort of knowing your loved one is safe and cared for.",
+      subtitle: (
+        <p>
+          We step in so you can take a well-
+          <br className="max-sm:hidden block" />
+          deserved break, with the comfort of
+          <br className="max-sm:hidden block" /> knowing your loved one is safe
+          and <br className="max-sm:hidden block" />
+          cared for.
+        </p>
+      ),
       image: family,
       color: "#E6E9F4",
     },
@@ -30,13 +44,13 @@ export const WhoWeHelp = () => {
 
   return (
     <section className=" py-6 md:py-10 lg:py-12 bg-white">
-      <div className="max-w-7xl px-3 lg:px-6 mx-auto flex flex-col items-center">
+      <div className="max-w-7xl px-6 md:px-10 xl:px-0 mx-auto flex flex-col items-center">
         {/* Title Section */}
         <div className="text-center mb-12 space-y-4">
-          <h2 className=" text-(--dark-blue) font-bold text-2xl md:text-3xl md:text-[40px]">
+          <h2 className=" text-(--dark-blue) font-bold text-2xl md:text-3xl xl:text-[40px]">
             Who We Help
           </h2>
-          <p className="text-[#64748B] text-sm sm:text-base md:text-lg max-w-xl mx-auto">
+          <p className="text-[#64748B] text-sm sm:text-base xl:text-lg max-w-xl mx-auto">
             We provide specialized care solutions for every stage of life's
             transitions, ensuring comfort and dignity.
           </p>
@@ -48,22 +62,24 @@ export const WhoWeHelp = () => {
             <div
               key={idx}
               style={{ backgroundColor: item.color }}
-              className={`relative overflow-hidden rounded-[20px] lg:rounded-[40px] p-4 sm:p-6 lg:p-12 min-h-44 flex flex-col justify-start 
-                ${idx === 2 ? "md:col-span-2" : "md:col-span-1"}`}
+              className={`relative sm:min-h-50 lg:min-h-40 xl:min-h-60 overflow-hidden rounded-[20px] lg:rounded-[40px] p-4 sm:p-6 lg:py-8 xl:p-12   flex flex-col justify-start 
+                ${idx === 2 ? "md:col-span-2 " : "md:col-span-1 "}`}
             >
               {/* Text Content */}
-              <div className="relative z-10 max-w-50.25 md:max-w-xs lg:max-w-md">
-                <h4 className="font-bold text-lg lg:text-2xl md:text-[34px] text-[#001953] mb-4">
+              <div className="relative z-10 max-w-45 sm:max-w-50 md:max-w-xs lg:max-w-md">
+                <h4 className="font-bold text-lg lg:text-2xl xl:text-[34px] text-[#001953] mb-4">
                   {item.title}
                 </h4>
-                <p className="text-[#64748B] font-medium text-sm lg:text-base md:text-[18px] leading-relaxed max-w-62.5 lg:max-w-[70%]">
+                <div
+                  className={`text-[#64748B] font-medium text-xs lg:text-base xl:text-[18px] leading-relaxed  `}
+                >
                   {item.subtitle}
-                </p>
+                </div>
               </div>
 
               {/* Character Image */}
               <div
-                className={`absolute ${idx == 0 ? "-right-10 bottom-0 lg:-right-20 lg:-bottom-10" : idx == 1 ? "-right-10 -bottom-5 lg:-right-20 lg:-bottom-20" : "right-0 bottom-0 lg:-right-2 lg:-bottom-3"}   w-[45%] md:w-[40%] lg:w-auto h-auto max-h-[90%] flex justify-end items-end overflow-clip`}
+                className={`absolute ${idx == 0 ? "-right-10 bottom-0 lg:-right-20 lg:-bottom-10" : idx == 1 ? "-right-10 -bottom-5 lg:-right-20 lg:-bottom-20" : "right-0 bottom-0 lg:-right-2 lg:-bottom-10"}   w-[45%] md:w-[40%] lg:w-auto h-auto max-h-[90%] flex justify-end items-end `}
               >
                 <Image
                   src={item.image}

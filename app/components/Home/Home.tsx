@@ -17,7 +17,7 @@ export const HeroPage = () => {
   return (
     <>
       <HeroSection />
-      <section className=" border-b border-[#E2E8F0] w-full px-3 sm:px-6 py-5 lg:py-10">
+      <section className=" border-b border-[#E2E8F0] w-full px-6 md:px-10  py-5 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between gap-x-10 overflow-x-auto scrollbar-hide">
             {sectionItems.map((item, idx) => (
@@ -28,10 +28,10 @@ export const HeroPage = () => {
                 <Image
                   src={item.icon}
                   alt={item.name}
-                  className="size-5 lg:size-8 object-contain"
+                  className="size-5 lg:size-6 object-contain"
                 />
 
-                <p className="font-semibold text-sm sm:text-base md:text-lg text-(--text-color)">
+                <p className="font-semibold text-sm sm:text-base lg:text-lg text-(--text-color)">
                   {item.name}
                 </p>
               </div>

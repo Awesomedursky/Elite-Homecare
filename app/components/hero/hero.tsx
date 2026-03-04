@@ -8,7 +8,7 @@ export const HeroSection = () => {
   const path = pathname.split("/")[1];
   return (
     <section
-      className={`relative h-[88vh] w-full flex ${path === "about-us" ? " items-center lg:items-end lg:py-[5%]" : "items-center"} overflow-hidden justify-center scroll-mt-20`}
+      className={`relative h-screen w-full flex ${path === "about-us" ? " items-center lg:items-end lg:py-[5%]" : "items-center"} overflow-hidden justify-center scroll-mt-20`}
     >
       {/* 1. Background Image using Next.js Image Component */}
       <div className="absolute inset-0 -z-10 ">
@@ -47,20 +47,23 @@ export const HeroSection = () => {
           </div>
         </div>
       ) : (
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex justify-center items-center text-center h-full">
+        <div className="max-w-7xl mx-auto px-3 sm:px-8 lg:px-12 w-full flex justify-center items-center text-center h-full">
           <div className=" lg:max-w-4xl">
-            <h1 className="text-white font-semibold text-3xl sm:text-4xl lg:text-[54px] md:text-[64px] mb-6 lg:leading-[1.3]">
-              Compassionate Home Care
+            <h1 className="text-white font-semibold text-3xl sm:text-4xl  lg:text-[64px] mb-6 leading-[1.2] lg:leading-[1.3]">
+              Compassionate <br className=" max-sm:block hidden" />
+              Home Care
               <br /> in Northeast Ohio
             </h1>
 
-            <p className="text-gray-200 font-medium text-sm sm:text-base md:text-lg mb-10  leading-relaxed ">
-              Expert care tailored to your family's unique needs. We provide
-              peace of mind <br /> for seniors and their loved ones through
-              dedicated, heart-led service.
+            <p className="text-gray-200 font-normal sm:font-medium text-sm sm:text-base md:text-lg mb-10  leading-relaxed ">
+              Expert care tailored to your family's unique needs.
+              <br className="max-sm:block hidden" /> We provide peace of mind{" "}
+              <br className=" max-sm:hidden block" /> for seniors and their
+              <br className="max-sm:block hidden" />
+              loved ones through dedicated, heart-led service.
             </p>
 
-            <div className="flex flex-wrap gap-4 items-center justify-center">
+            <div className="flex max-sm:flex-col gap-4 items-center justify-center">
               <Link
                 href="/contact-us"
                 className="px-4 py-3 sm:px-8 sm:py-4 bg-(--p700) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]  hover:bg-position-[100%_0%]  text-white  rounded-full font-semibold shadow-md transition-all  duration-300 cursor-pointer"
@@ -69,7 +72,7 @@ export const HeroSection = () => {
               </Link>
               <Link
                 href="/#services"
-                className="bg-white  transform hover:bg-[#FFEBEE] px-6 py-3   sm:px-6 sm:py-4 lg:w-63  rounded-full text-(--primary) font-bold transition-all cursor-pointer"
+                className="sm:bg-white  transform hover:bg-[#FFEBEE] px-6 py-3   sm:px-6 sm:py-4 lg:w-63  rounded-full text-white sm:text-(--primary) font-bold transition-all cursor-pointer"
               >
                 Our Services
               </Link>

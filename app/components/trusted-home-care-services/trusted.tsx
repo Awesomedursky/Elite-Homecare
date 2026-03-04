@@ -91,11 +91,12 @@ export const TrustedHomeCareServices = () => {
 
   return (
     <section className="py-10 lg:py-20 bg-white scroll-mt-20" id="services">
-      <div className="max-w-7xl px-6 mx-auto">
+      <div className="max-w-7xl px-6 md:px-10 xl:px-0 mx-auto">
         {/* Title Section */}
         <div className="text-center mb-4 md:mb-8 lg:mb-16 space-y-3 lg:space-y-4">
-          <h2 className="text-(--dark-blue) font-bold text-[28px] lg:text-3xl md:text-[40px]">
-            Our Trusted{" "}
+          <h2 className="text-(--dark-blue) font-bold text-[28px] md:text-3xl lg:text-[40px]">
+            Our Trusted
+            <br className=" max-sm:block hidden" />{" "}
             <span className="text-(--secondary) italic">Homecare</span> Services
           </h2>
           <p className="text-[#64748B] text-sm  lg:text-lg max-w-2xl mx-auto">
@@ -118,9 +119,9 @@ export const TrustedHomeCareServices = () => {
                 key={id}
                 onClick={() => toggleCard(id)}
                 className={`
-                  relative flex-none h-50 lg:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
+                  relative flex-none h-50 md:h-75 lg:h-90 xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
                   transition-all duration-500 ease-out hover:scale-105
-                  ${isActive ? "w-28 lg:w-58" : "w-60 lg:w-136 "}
+                  ${isActive ? "w-28 lg:w-58" : "w-60 md:w-78 lg:w-105 xl:w-136 "}
                 `}
               >
                 {/* Background */}
