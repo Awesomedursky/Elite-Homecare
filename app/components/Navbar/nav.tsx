@@ -7,6 +7,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const navItems = [
@@ -42,6 +43,12 @@ export const Navbar = () => {
     { name: "Careers", href: "/careers" },
   ];
 
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push("/success/application");
+  };
+
   const navItemsMobile = [
     {
       name: "Services",
@@ -65,10 +72,10 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-1000 bg-background/80 backdrop-blur-md  scroll-mt-20 drop-shadow-2xl">
-      <div className=" mx-auto px-4 md:px-10  xl:px-0 max-w-7xl">
+    <nav className="sticky top-0 z-1000 bg-background/80 backdrop-blur-md  scroll-mt-20 ">
+      <div className=" mx-auto  max-w-7xl">
         <div
-          className={`flex  justify-between items-center h-[8vh] lg:h-20.5   ${isMobileMenuOpen ? " shadow-[0_8px_20px_rgba(0,0,0,0.06)] drop-shadow-2xl" : ""}`}
+          className={`flex px-6 md:px-10  xl:px-0 justify-between items-center h-[8vh] lg:h-20.5   ${isMobileMenuOpen ? " shadow-[0_8px_20px_rgba(0,0,0,0.06)] drop-shadow-2xl" : ""}`}
         >
           {/* Logo */}
           <Link href="/">

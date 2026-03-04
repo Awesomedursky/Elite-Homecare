@@ -47,7 +47,7 @@ export const WhoWeHelp = () => {
       <div className="max-w-7xl px-6 md:px-10 xl:px-0 mx-auto flex flex-col items-center">
         {/* Title Section */}
         <div className="text-center mb-12 space-y-4">
-          <h2 className=" text-(--dark-blue) font-bold text-2xl md:text-3xl xl:text-[40px]">
+          <h2 className=" text-(--dark-blue) font-bold text-2xl md:text-3xl lg:text-4xl xl:text-[40px]">
             Who We Help
           </h2>
           <p className="text-[#64748B] text-sm sm:text-base xl:text-lg max-w-xl mx-auto">

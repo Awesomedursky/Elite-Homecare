@@ -114,7 +114,7 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-white scroll-mt-20 relative">
       <section className="md:py-8 lg:py-12">
-        <div className="max-w-7xl mx-auto px-3 py-8 sm:py-0 sm:px-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-10  xl:px-0 py-8 sm:py-0 sm:px-6">
           <div className="bg-white">
             <div className="md:flex gap-5 lg:gap-10 items-start ">
               {/* Left: Image and description */}

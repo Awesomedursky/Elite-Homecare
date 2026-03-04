@@ -17,6 +17,38 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 export const TrustedHomeCareServices = () => {
   const [activeCards, setActiveCards] = useState<Set<string>>(new Set());
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!scrollRef.current) return;
+
+    isDragging.current = true;
+    scrollRef.current.classList.add("cursor-grabbing");
+
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    isDragging.current = false;
+    scrollRef.current?.classList.remove("cursor-grabbing");
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    scrollRef.current?.classList.remove("cursor-grabbing");
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging.current || !scrollRef.current) return;
+
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5; // speed multiplier
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
 
   const toggleCard = (id: string) => {
     setActiveCards((prev) => {
@@ -94,12 +126,12 @@ export const TrustedHomeCareServices = () => {
       <div className="max-w-7xl px-6 md:px-10 xl:px-0 mx-auto">
         {/* Title Section */}
         <div className="text-center mb-4 md:mb-8 lg:mb-16 space-y-3 lg:space-y-4">
-          <h2 className="text-(--dark-blue) font-bold text-[28px] md:text-3xl lg:text-[40px]">
+          <h2 className="text-(--dark-blue) font-bold text-[28px] md:text-3xl lg:text-4xl xl:text-[40px]">
             Our Trusted
             <br className=" max-sm:block hidden" />{" "}
             <span className="text-(--secondary) italic">Homecare</span> Services
           </h2>
-          <p className="text-[#64748B] text-sm  lg:text-lg max-w-2xl mx-auto">
+          <p className="text-[#64748B] text-sm  lg:text-lg max-w-sm lg:max-w-2xl mx-auto">
             Our services are as unique as the individuals we serve. We create
             custom plans that adapt to your evolving needs.
           </p>
@@ -107,8 +139,12 @@ export const TrustedHomeCareServices = () => {
         {/* Cards */}
         <div
           ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
           className={`
-            ${activeCards.size == sliderItem.length ? "lg:grid flex lg:grid-cols-5" : "flex"} gap-3  lg:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth p-2 lg:p-5 scroll-mt-20 `}
+            flex gap-3  lg:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth p-2 lg:p-5 scroll-mt-20 cursor-grab`}
         >
           {sliderItem.map(({ id, icon, image, title, subtitle }) => {
             const isActive = activeCards.has(id);
@@ -119,9 +155,9 @@ export const TrustedHomeCareServices = () => {
                 key={id}
                 onClick={() => toggleCard(id)}
                 className={`
-                  relative flex-none h-50 md:h-75 lg:h-90 xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
+                  relative flex-none h-55 md:h-75 lg:h-90 xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
                   transition-all duration-500 ease-out hover:scale-105
-                  ${isActive ? "w-28 lg:w-58" : "w-60 md:w-78 lg:w-105 xl:w-136 "}
+                  ${isActive ? "w-28 lg:w-58" : "w-64 md:w-78 lg:w-105 xl:w-136 "}
                 `}
               >
                 {/* Background */}

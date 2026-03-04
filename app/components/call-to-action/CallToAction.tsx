@@ -31,7 +31,7 @@ export const CallToAction = () => {
         </div>
 
         <div className=" flex flex-col gap-6 z-10">
-          <h2 className=" font-extrabold text-white text-2xl sm:text-3xl xl:text-[50px] text-center  xl:leading-14.5 max-w-144.25 mx-auto">
+          <h2 className=" font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl  xl:text-[50px] text-center  xl:leading-14.5 max-w-144.25 mx-auto">
             Ready to give them the
             <br /> care they deserve?
           </h2>

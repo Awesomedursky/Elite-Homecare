@@ -5,13 +5,13 @@ import caregiverhappy from "@/public/images/imporeveItwithCaregiver.png";
 
 export const JoinOurCareTeam = () => {
   return (
-    <div className=" max-w-208.5 mx-auto text-center px-3 lg:px-0 py-10 space-y-12.5">
+    <div className=" max-w-208.5 mx-auto text-center px-6 md:px-10  xl:px-0 py-10 space-y-12.5">
       <div className=" flex flex-col space-y-7.5 items-center">
         <div className=" space-y-1.5 lg:space-y-3.5 px-3">
           <p className=" text-base lg:text-xl font-bold text-(--secondary)">
             Join Our Care Team
           </p>
-          <h3 className=" text-[28px] md:text-3xl lg:text-[40px]  font-bold text-(--dark-blue)">
+          <h3 className=" text-[28px] md:text-3xl lg:text-4xl xl:text-[40px]  font-bold text-(--dark-blue)">
             Make a Meaningful Difference
           </h3>
           <p className=" text-[#64748B] text-sm md:text-base lg:text-lg font-medium text-center">
@@ -38,7 +38,7 @@ export const JoinOurCareTeam = () => {
             src={caregiverBeforeJob}
             alt="Caregiver before getting a job"
             priority
-            className="object-cover grayscale"
+            className="object-cover grayscale h-full"
           />
         </div>
 
