@@ -118,7 +118,7 @@ export default function CareersPage() {
           <div className="bg-white">
             <div className="md:flex gap-5 lg:gap-10 items-start ">
               {/* Left: Image and description */}
-              <div className="hidden lg:flex lg:w-[40%] md:h-[65vh]  flex-col lg:gap-y-10">
+              <div className="hidden sticky top-20 lg:flex lg:w-[40%] md:h-[65vh]  flex-col lg:gap-y-10">
                 <div className="relative overflow-hidden bg-[#e8f4fc]  rounded-4xl md:h-[90%] lg:full">
                   <Image
                     src={caregiverBeforeJob}
@@ -128,7 +128,7 @@ export default function CareersPage() {
                     placeholder="blur"
                   />
                 </div>
-                <p className="text-[#64748B] md:text-sm lg:text-base leading-relaxed font-medium mt-5">
+                <p className="text-[#64748B] md:text-sm lg:text-base leading-relaxed font-medium ">
                   If you&apos;re compassionate, dependable, and passionate about
                   caring for others, we&apos;d love to hear from you. Apply and
                   take the first step toward meaningful work.
@@ -136,7 +136,7 @@ export default function CareersPage() {
               </div>
 
               {/* Right: Application form */}
-              <div className="lg:w-[60%] bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-6 sm:p-6 lg:p-8 lg:h-[75vh] scrollbar-hide overflow-y-auto w-full">
+              <div className="lg:w-[60%] bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-6 sm:p-6 lg:p-8 scrollbar-hide overflow-y-auto w-full">
                 <p className="text-(--secondary) font-bold text-sm sm:text-base lg:text-lg  mb-2">
                   Join Our Care Team
                 </p>

@@ -114,14 +114,14 @@ const ContactUs = () => {
 
   return (
     <main className="min-h-screen bg-white scroll-mt-20 relative">
-      <section className="max-w-7xl mx-auto px-3 py-8 lg:py-12">
+      <section className="max-w-7xl mx-auto px-4 md:px-10  xl:px-0 py-8 lg:py-12">
         <div className=" lg:flex gap-10 lg:gap-12 items-start ">
           {/* Left: Form */}
-          <div className="bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-3 sm:p-6 lg:p-8 md:h-[78vh] scrollbar-hide overflow-y-auto w-full lg:w-[60%]">
+          <div className="bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-3 sm:p-6 lg:p-8 scrollbar-hide overflow-y-auto w-full lg:w-[60%]">
             <h2 className="text-(--secondary) font-bold text-sm sm:text-base lg:text-lg  mb-2">
               Get In Touch
             </h2>
-            <h3 className="text-(--dark-blue) font-bold text-base sm:text-xl md:text-2xl lg:text-4xl sm:mb-4 mb-1">
+            <h3 className="text-(--dark-blue) font-bold text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl sm:mb-4 mb-1">
               Let&apos;s Start with a Conversation
             </h3>
             <p className="text-[#64748B] text-xs sm:text-sm md:text-base sm:mb-8 mb-4  font-medium text-justify md:text-left">
@@ -220,7 +220,7 @@ const ContactUs = () => {
           </div>
 
           {/* Right: Contact info & image */}
-          <div className="hidden lg:block relative w-[40%]">
+          <div className="hidden lg:block  w-[40%] sticky top-20">
             <div className="relative overflow-hidden bg-[#e8f4fc]  rounded-4xl w-full h-[63vh]">
               <Image
                 src={RemoveTheStars}

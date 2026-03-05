@@ -10,7 +10,7 @@ export const Button = ({
       type="submit"
       disabled={loading}
       className="
-      px-4 py-3 sm:px-8 sm:py-4 
+      px-4 py-2 sm:px-8 sm:py-4 
 bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)]
 bg-size-[200%_100%]
 bg-left overflow-hidden

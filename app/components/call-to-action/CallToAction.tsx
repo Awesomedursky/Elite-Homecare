@@ -45,14 +45,14 @@ export const CallToAction = () => {
         <div className="flex justify-center items-center flex-col lg:flex-row gap-x-4 z-10 gap-y-4">
           <Link
             href="/contact-us"
-            className=" bg-[#D31A21] rounded-[20px] py-2 px-3 lg:py-4 lg:px-4 xl:px-6 text-base lg:text-lg font-medium text-white cursor-pointer hover:bg-[#D31A21]/80 duration-300 transition-all"
+            className=" bg-[#D31A21] rounded-[20px] py-2 px-3 lg:py-4 lg:px-4 xl:px-6 text-sm md:text-base xl:text-lg font-medium text-white cursor-pointer hover:bg-[#D31A21]/80 duration-300 transition-all"
           >
             Request Your Consultation
           </Link>
 
           <button
             onClick={handleCallClick}
-            className={`border-[#64748B] border rounded-[20px] py-2 px-3 lg:py-4 lg:px-6 text-lg font-medium w-50 xl:w-61.5 cursor-pointer hover:bg-(--primary) duration-300 transition-all flex items-center justify-center gap-2 ${
+            className={`border-[#64748B] border rounded-[20px] py-2 px-3 lg:py-4 lg:px-6 text-sm md:text-base xl:text-lg font-medium  xl:w-61.5 cursor-pointer hover:bg-(--primary) duration-300 transition-all flex items-center justify-center gap-2 ${
               showNumber ? "bg-white text-(--primary)" : "text-white"
             }`}
           >
