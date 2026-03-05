@@ -155,9 +155,9 @@ export const TrustedHomeCareServices = () => {
                 key={id}
                 onClick={() => toggleCard(id)}
                 className={`
-                  relative flex-none h-58 md:h-75 lg:h-95 xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
+                  relative flex-none h-64 md:h-75 lg:h-95 xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
                   transition-all duration-500 ease-out hover:scale-105
-                  ${isActive ? "w-28 lg:w-58" : "w-64 md:w-78 lg:w-105 xl:w-136 "}
+                  ${isActive ? "w-28 lg:w-58" : "w-70 md:w-78 lg:w-105 xl:w-136 "}
                 `}
               >
                 {/* Background */}
@@ -178,7 +178,7 @@ export const TrustedHomeCareServices = () => {
                   className={`absolute z-20 bg-[linear-gradient(180deg,rgba(0,52,133,0.12)_14.04%,#003991_114.49%),linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))]    flex items-center lg:justify-center    transition-all duration-500
     ${
       isActive
-        ? `  block w-xs lg:w-lg lg:text-center h-22 xl:h-24
+        ? `  block w-xs lg:w-lg lg:text-center  md:h-22 xl:h-24
           top-full left-0
           -rotate-90
           origin-top-left
@@ -202,7 +202,7 @@ export const TrustedHomeCareServices = () => {
                     </h3>
 
                     {!isActive && (
-                      <p className="text-white/90 text-[8.76px] md:text-xs lg:text-sm lg:leading-relaxed ">
+                      <p className="text-white/90 text-xs md:text-xs lg:text-sm lg:leading-relaxed ">
                         {subtitle}
                       </p>
                     )}

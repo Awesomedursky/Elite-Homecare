@@ -37,7 +37,7 @@ export const Footer = () => {
     {
       icon: donate,
       name: "Donate",
-      href: "/#donatiton",
+      href: "/#donation",
     },
     {
       icon: request,
@@ -68,7 +68,7 @@ export const Footer = () => {
         <BsArrowUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
       </button>
 
-      <div className="mx-auto  px-6 md:px-10  xl:px-0  2xl:max-w-7xl flex justify-between lg:pt-20 pb-10 py-10 flex-col md:flex-row gap-5 sm:gap-10 md:gap-0 ">
+      <div className="mx-auto  px-6 md:px-10  xl:px-0  xl:max-w-7xl flex justify-between lg:pt-20 pb-10 py-10 flex-col md:flex-row gap-5 sm:gap-10 md:gap-0 ">
         {/*footer image and text */}
         <div className="flex flex-col gap-3.5 ">
           <Link href="/">
@@ -81,7 +81,7 @@ export const Footer = () => {
               />
             </div>
           </Link>
-          <p className=" hidden md:block text-sm lg:text-lg leading-6 xl:leading-8  max-w-xs  xl:max-w-106.75 font-medium text-white">
+          <p className=" hidden md:block text-sm md:text-base xl:text-lg leading-6 xl:leading-8  max-w-xs lg:max-w-md  xl:max-w-lg font-medium text-white">
             Providing premier in-home care services across Northeast Ohio. Our
             mission is to enhance the quality of life for our clients and
             provide peace of mind for their families
@@ -94,7 +94,7 @@ export const Footer = () => {
             <h4 className=" text-(--secondary) font-bold text-sm lg:text-base text-nowrap">
               QUICK LINKS
             </h4>
-            <div className=" flex flex-col gap-2">
+            <div className=" flex flex-col gap-2 justify-between">
               {quicklinks.map((i, idx) => (
                 <Link
                   key={idx}
@@ -123,7 +123,7 @@ export const Footer = () => {
                     <Image
                       src={i.icon}
                       alt="icon"
-                      className=" size-4 sm:size-5 lg:size-6 min-h-5"
+                      className=" size-4 sm:size-5 lg:size-6"
                     />
                   </span>
                   {i.name}

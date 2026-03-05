@@ -41,15 +41,15 @@ const Donate = () => {
     setTellUsMore("");
   }, []);
   return (
-    <section className="max-w-7xl w-full mx-auto lg:px-3   scroll-mt-20">
-      <div className="lg:rounded-[40px] lg:border border-[#D8E0E9] my-6 drop-shadow-[0_4px_4px_rgba(216,224,233,0.5)] flex flex-col lg:flex-row w-full justify-between gap-5 lg:gap-x-10 overflow-hidden lg:h-[75vh]">
+    <section className="max-w-7xl w-full mx-auto lg:px-10 xl:px-0   scroll-mt-20">
+      <div className="lg:rounded-[40px] lg:border border-[#D8E0E9] my-6 drop-shadow-[0_4px_4px_rgba(216,224,233,0.5)] flex flex-col lg:flex-row w-full justify-between gap-5 lg:gap-x-10 overflow-hidden lg:h-[86vh]">
         {/* LEFT SIDE — IMAGE */}
         <div
           className="
       relative
       flex flex-col lg:justify-end
       w-full
-      h-[40vh] sm:h-80 md:h-[50vh]
+       h-[50vh] sm:h-80 md:h-[50vh]
       lg:h-auto
       lg:w-117.5
       lg:min-w-[35%] lg:max-w-[40%]
@@ -63,7 +63,7 @@ const Donate = () => {
               alt="Support Our Mission"
               fill
               placeholder="blur"
-              className=""
+              className=" object-cover"
               priority
             />
           </div>
@@ -81,7 +81,7 @@ const Donate = () => {
               className="w-auto h-8 max-lg:hidden"
             />
 
-            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+            <div className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold">
               Support Our Mission
             </div>
 
@@ -93,7 +93,7 @@ const Donate = () => {
         </div>
 
         {/* RIGHT SIDE — FORM */}
-        <div className="w-full px-3 lg:p-10 xl:p-12 lg:overflow-y-scroll scrollbar-hide">
+        <div className="w-full py-2.5 px-6 md:px-10   xl:p-12 lg:overflow-y-scroll scrollbar-hide">
           <div>
             <h3 className="text-(--dark-blue) font-bold text-base sm:text-xl md:text-2xl lg:text-4xl sm:mb-4 mb-1">
               I Want to Help

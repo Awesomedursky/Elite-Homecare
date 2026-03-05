@@ -62,7 +62,7 @@ export const WhoWeHelp = () => {
             <div
               key={idx}
               style={{ backgroundColor: item.color }}
-              className={`relative sm:min-h-50 lg:min-h-40 xl:min-h-60 overflow-hidden rounded-[20px] lg:rounded-[40px] p-4 sm:p-6 lg:py-8 xl:p-12   flex flex-col justify-start 
+              className={`relative sm:min-h-50 lg:min-h-48 xl:min-h-65 overflow-hidden rounded-[20px] lg:rounded-[40px] p-4 sm:p-6 lg:py-8 xl:p-12   flex flex-col justify-start 
                 ${idx === 2 ? "md:col-span-2 " : "md:col-span-1 "}`}
             >
               {/* Text Content */}

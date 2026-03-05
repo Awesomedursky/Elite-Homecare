@@ -57,34 +57,50 @@ export const Navbar = () => {
     { name: "How it works", href: "#how-it-works" },
     { name: "About Us", href: "/about-us" },
     { name: "Careers", href: "/careers" },
-    { name: "Support", href: "/support" },
+    { name: "Support", href: "/donate" },
   ];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const [width, setWidth] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
   return (
-    <nav className="sticky top-0 z-1000 bg-background/80 backdrop-blur-md  scroll-mt-20 ">
+    <nav
+      className={`sticky top-0 z-50 bg-background/80 backdrop-blur-md transition-all duration-300 ${
+        isScrolled ? "shadow-[0_4px_20px_rgba(0,0,0,0.06)]" : ""
+      }`}
+    >
       <div className=" mx-auto  max-w-7xl">
         <div
           className={`flex px-6 md:px-10  xl:px-0 justify-between items-center h-[8vh] lg:h-20.5   ${isMobileMenuOpen ? " shadow-[0_8px_20px_rgba(0,0,0,0.06)] drop-shadow-2xl" : ""}`}
         >
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
             <div className="  ">
               <Image
-                src={width !== null && width > 1024 ? logo : logoSmall}
+                src={logo}
                 alt="Elite-Homecare"
                 priority
-                className="w-auto h-24 lg:h-34"
+                className="hidden lg:block w-auto h-24 lg:h-34"
+              />
+
+              <Image
+                src={logoSmall}
+                alt="Elite-Homecare"
+                priority
+                className="block lg:hidden w-auto h-24"
               />
             </div>
           </Link>
@@ -110,7 +126,7 @@ export const Navbar = () => {
 
                 {/* Centralized Submenu */}
                 {item.submenu && (
-                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-64  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
+                  <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 w-64  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
                     <div className="bg-white border border-gray-100 shadow-2xl rounded-xl overflow-hidden py-2">
                       {item.submenu.map((sub, idx) => (
                         <Link
@@ -152,7 +168,7 @@ export const Navbar = () => {
         </div>
         {/* Mobile Menu */}
         <div
-          className={`overflow-hidden left-0    w-full flex flex-col items-center   bg-[#FFFFFF] gap-8 justify-between" ${isMobileMenuOpen ? " h-screen pt-12" : "h-0"} transition-all duration-300 ease-in-out`}
+          className={`overflow-hidden left-0    w-full flex flex-col items-center   bg-[#FFFFFF] gap-8  ${isMobileMenuOpen ? " h-screen pt-12" : "h-0"} transition-all duration-300 ease-in-out`}
         >
           {navItemsMobile?.map((item) => (
             <Link
