@@ -47,6 +47,16 @@ export const HowToSupport = () => {
     }
   };
 
+  const handleCheckout = async () => {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+    });
+
+    const data = await res.json();
+
+    window.location.href = data.url;
+  };
+
   return (
     <div
       id="donation"
@@ -91,7 +101,7 @@ export const HowToSupport = () => {
                 <div className=" md:text-center">
                   {idx == 0 ? (
                     <Link
-                      href="/donate"
+                      href="/volunteer"
                       className="flex items-center gap-x-1 text-sm lg:text-base font-medium text-[#1C469D]"
                     >
                       Get Invlolved <GoArrowUpRight />

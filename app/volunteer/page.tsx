@@ -3,10 +3,12 @@ import Image from "next/image";
 import supportImage from "@/public/images/support.png";
 import supportLogo from "@/public/images/supportLogo.png";
 import { Input } from "../components/atoms/Input";
-import { useCallback, useState } from "react";
+import { SubmitEvent, useCallback, useState } from "react";
 import { MultiSelect } from "../components/atoms/MultiSelect";
 import { Button } from "../components/atoms/CustomButton";
 import { Textarea } from "../components/atoms/Textarea";
+import { useRouter } from "next/navigation";
+import { Toast } from "../components/atoms/Toast";
 
 const Donate = () => {
   const HOW_WOULD_YOU_LIKE_TO_HELP = [
@@ -21,6 +23,17 @@ const Donate = () => {
   const [email, setEmail] = useState("");
   const [howToHelp, setHowToHelp] = useState<string[]>([]);
   const [tellUsMore, setTellUsMore] = useState("");
+
+  const resetForm = useCallback(() => {
+    setFullName("");
+    setPhone("");
+    setEmail("");
+    setHowToHelp([]);
+    setTellUsMore("");
+  }, []);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const router = useRouter();
   const [toast, setToast] = useState<{
     message: string;
     type: "success" | "error";
@@ -33,13 +46,42 @@ const Donate = () => {
     [],
   );
 
-  const resetForm = useCallback(() => {
-    setFullName("");
-    setPhone("");
-    setEmail("");
-    setHowToHelp([]);
-    setTellUsMore("");
-  }, []);
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData();
+    formData.append("fullName", fullName);
+    formData.append("phone", phone);
+    formData.append("email", email);
+    formData.append("howToHelp", howToHelp.join(", "));
+    formData.append("tellUsMore", tellUsMore);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xykddggy", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        router.push("/success/volunteer");
+        resetForm();
+      } else {
+        const data = await res.json();
+        throw new Error(data.error || "Submission failed");
+      }
+    } catch (err) {
+      showToast(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
+        "error",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="max-w-7xl w-full mx-auto lg:px-10 xl:px-0   scroll-mt-20">
       <div className="lg:rounded-[40px] lg:border border-[#D8E0E9] my-6 drop-shadow-[0_4px_4px_rgba(216,224,233,0.5)] flex flex-col lg:flex-row w-full justify-between gap-5 lg:gap-x-10 overflow-hidden lg:h-[86vh]">
@@ -105,7 +147,7 @@ const Donate = () => {
             </p>
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <Input
               id="fullName"
               label="Full Name"
@@ -150,10 +192,17 @@ const Donate = () => {
               onChange={setTellUsMore}
             />
 
-            <Button text="Request Free Consultation" />
+            <Button text="Submit Interest" loading={isSubmitting} />
           </form>
         </div>
       </div>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     </section>
   );
 };

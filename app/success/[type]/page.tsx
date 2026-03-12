@@ -9,7 +9,7 @@ type PageProps = {
 };
 
 const successContent = {
-  interest: {
+  volunteer: {
     title: "Interest Sent Successfully",
     message:
       "Thank you for your willingness to help. We will reach out shortly with the next steps. We truly appreciate your time and support. ❤️",
@@ -18,6 +18,11 @@ const successContent = {
     title: "Application Submitted",
     message:
       "Thank you for applying to My Elite Home Care. We’ve received your application and appreciate your interest in joining our care team.",
+  },
+  payment: {
+    title: "Payment Successful",
+    message:
+      "Thank you for your donation. Your support helps us continue our mission to provide exceptional care",
   },
   contact: {
     title: "We’ve Got Your Request",
@@ -29,8 +34,6 @@ const successContent = {
 const SuccessPage = async ({ params }: PageProps) => {
   const { type } = await params;
 
-  console.log(type);
-
   const content = successContent[type as keyof typeof successContent];
 
   if (!content) {
@@ -39,12 +42,12 @@ const SuccessPage = async ({ params }: PageProps) => {
 
   return (
     <section className="py-12 flex items-center justify-center bg-gray-50 px-6">
-      <div className="max-w-3xl w-full bg-white rounded-xl md:rounded-[30px] shadow-lg p-6 md:p-12 text-center space-y-4 md:space-y-6">
+      <div className="max-w-166.25 w-full bg-white rounded-xl md:rounded-[30px] shadow-lg p-6 md:p-12 text-center space-y-4 md:space-y-6">
         <h1 className="text-xl md:text-4xl font-bold text-[#002270]">
           {content.title}
         </h1>
 
-        <p className="text-gray-600 text-sm  max-w-xl mx-auto">
+        <p className="text-[#64748B] text-sm lg:text-base font-medium  max-w-lg mx-auto">
           {content.message}
         </p>
 
@@ -53,6 +56,7 @@ const SuccessPage = async ({ params }: PageProps) => {
             src={nurseImage}
             alt="Success Image"
             fill
+            placeholder="blur"
             className="object-cover"
           />
         </div>
@@ -66,7 +70,7 @@ const SuccessPage = async ({ params }: PageProps) => {
           </Link>
 
           <Link
-            href="/about"
+            href="/about-us"
             className="bg-gray-200 text-sm md:text-base py-2 px-3 lg:px-6 lg:py-3 rounded-full font-semibold text-[#0F2E6E]"
           >
             Learn more About Us

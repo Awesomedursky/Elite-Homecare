@@ -52,7 +52,7 @@ export const CallToAction = () => {
 
           <button
             onClick={handleCallClick}
-            className={`border-[#64748B] border rounded-[20px] py-2 px-3 lg:py-4 lg:px-6 text-sm md:text-base xl:text-lg font-medium  xl:w-61.5 cursor-pointer hover:bg-(--primary) duration-300 transition-all flex items-center justify-center gap-2 ${
+            className={`border-[#64748B] border rounded-[20px] py-2 px-3 lg:py-4 lg:px-6 text-sm md:text-base xl:text-lg font-medium  xl:w-61.5 cursor-pointer hover:bg-(--primary) hover:text-white duration-300 transition-all flex items-center justify-center gap-2 ${
               showNumber ? "bg-white text-(--primary)" : "text-white"
             }`}
           >

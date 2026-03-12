@@ -97,7 +97,10 @@ export const CVUpload = ({
       return;
     }
     try {
+      onFileChange(f, null); // show file immediately so progress UI renders
+
       const url = await uploadToCloudinary(f);
+
       onFileChange(f, url);
       onSuccess("Document uploaded successfully");
     } catch {
@@ -145,7 +148,7 @@ export const CVUpload = ({
         accept=".pdf,.docx"
         onChange={handleFileChange}
         disabled={isUploading}
-        className="hidden"
+        className="absolute opacity-0 w-0 h-0 peer"
       />
       {hasFile ? (
         <div className="space-y-2">
@@ -178,7 +181,7 @@ export const CVUpload = ({
           htmlFor="cv-upload"
           onDrop={handleDrop}
           onDragOver={handleDragOver}
-          className="flex items-center justify-between gap-4 w-full px-3 md:px-4 py-2 md:py-3   rounded-lg cursor-pointer bg-[#64748B] hover:bg-[#64748B]/90 duration-500 transition-colors min-h-12"
+          className="flex items-center justify-between gap-4 w-full px-3 md:px-4 py-2 md:py-3   rounded-lg cursor-pointer bg-[#64748B] hover:bg-[#64748B]/90 duration-500 transition-colors min-h-12 "
         >
           <span className="text-white text-sm flex items-center">{label}</span>
           <span className="shrink-0 w-8 h-8 rounded-full bg-white flex items-center justify-center cursor-pointer">

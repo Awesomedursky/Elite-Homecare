@@ -7,7 +7,6 @@ import { IoIosArrowUp } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
-import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const navItems = [
@@ -43,12 +42,6 @@ export const Navbar = () => {
     { name: "Careers", href: "/careers" },
   ];
 
-  const router = useRouter();
-
-  const onClick = () => {
-    router.push("/success/application");
-  };
-
   const navItemsMobile = [
     {
       name: "Services",
@@ -57,7 +50,7 @@ export const Navbar = () => {
     { name: "How it works", href: "#how-it-works" },
     { name: "About Us", href: "/about-us" },
     { name: "Careers", href: "/careers" },
-    { name: "Support", href: "/donate" },
+    { name: "Support", href: "/volunteer" },
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

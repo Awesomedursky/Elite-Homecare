@@ -10,6 +10,7 @@ import { Textarea } from "@/app/components/atoms/Textarea";
 import { Select } from "@/app/components/atoms/Select";
 import { Toast } from "@/app/components/atoms/Toast";
 import { Button } from "../components/atoms/CustomButton";
+import { useRouter } from "next/navigation";
 
 const POSITION_OPTIONS = [
   { value: "pca-caregiver", label: "PCA / Caregiver" },
@@ -56,6 +57,8 @@ export default function CareersPage() {
     [],
   );
 
+  const router = useRouter();
+
   const resetForm = useCallback(() => {
     setUploadedFile(null);
     setUploadedFileUrl(null);
@@ -71,6 +74,11 @@ export default function CareersPage() {
 
   const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!uploadedFileUrl) {
+      showToast("Please upload your CV before submitting.", "error");
+      return;
+    }
     setIsSubmitting(true);
 
     const formData = new FormData();
@@ -90,10 +98,7 @@ export default function CareersPage() {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
-        showToast(
-          "Thank you! Your application has been submitted. We will be in touch soon.",
-          "success",
-        );
+        router.push("/success/application");
         resetForm();
       } else {
         const data = await res.json();
@@ -158,7 +163,7 @@ export default function CareersPage() {
                     onUploading={setIsUploading}
                     onError={(msg) => showToast(msg, "error")}
                     onSuccess={(msg) => showToast(msg, "success")}
-                    required
+                    // required
                   />
 
                   <Input

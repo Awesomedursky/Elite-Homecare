@@ -15,6 +15,7 @@ import {
 } from "react-icons/io5";
 import RemoveTheStars from "@/public/images/removeTheStars.png";
 import { Button } from "../components/atoms/CustomButton";
+import { useRouter } from "next/navigation";
 
 const WHO_CARE_FOR_OPTIONS = [
   { value: "myself", label: "Myself" },
@@ -59,6 +60,8 @@ const ContactUs = () => {
     [],
   );
 
+  const router = useRouter();
+
   const resetForm = useCallback(() => {
     setFullName("");
     setPhone("");
@@ -91,10 +94,7 @@ const ContactUs = () => {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
-        showToast(
-          "Thank you! Your consultation request has been submitted. A care specialist will reach out soon.",
-          "success",
-        );
+        router.push("/success/contact");
         resetForm();
       } else {
         const data = await res.json();
