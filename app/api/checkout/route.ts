@@ -7,31 +7,24 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function POST() {
   try {
+    // First create a price with custom_unit_amount enabled
+    const price = await stripe.prices.create({
+      currency: "usd",
+      custom_unit_amount: {
+        enabled: true,
+        minimum: 100, // $1 minimum in cents
+        preset: 1000, // $10 suggested default in cents
+      },
+      product_data: {
+        name: "Donation",
+      },
+    });
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
-
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: "Donation",
-              description: "Support our mission",
-            },
-
-            custom_unit_amount: {
-              enabled: true,
-              // minimum: 100, // $1 minimum
-              // preset: 500, // optional suggested amount
-            },
-          },
-
-          quantity: 1,
-        },
-      ],
-
+      submit_type: "donate",
+      line_items: [{ price: price.id, quantity: 1 }],
       billing_address_collection: "auto",
-
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success/payment`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
     });
