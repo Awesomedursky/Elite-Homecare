@@ -51,7 +51,7 @@ export const Footer = () => {
     },
     {
       icon: message,
-      name: "myelitehomecare@gmail.com",
+      name: "contact@myelitehomecare.com",
       href: "#",
     },
   ];
