@@ -58,7 +58,7 @@ const Donate = () => {
     formData.append("tellUsMore", tellUsMore);
 
     try {
-      const res = await fetch("https://formspree.io/f/xykddggy", {
+      const res = await fetch("https://formspree.io/f/mjgarvqe", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },

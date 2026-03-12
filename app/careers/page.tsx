@@ -92,7 +92,7 @@ export default function CareersPage() {
     if (uploadedFileUrl) formData.append("attachment", uploadedFileUrl);
 
     try {
-      const res = await fetch("https://formspree.io/f/mykddlzw", {
+      const res = await fetch("https://formspree.io/f/mqeybkvw", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },

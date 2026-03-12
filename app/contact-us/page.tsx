@@ -88,7 +88,7 @@ const ContactUs = () => {
     formData.append("marketingConsent", marketingConsent ? "Yes" : "No");
 
     try {
-      const res = await fetch("https://formspree.io/f/xykddggy", {
+      const res = await fetch("https://formspree.io/f/xvzwrojz", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },

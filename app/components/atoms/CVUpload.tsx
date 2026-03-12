@@ -50,7 +50,7 @@ export const CVUpload = ({
     return new Promise((resolve, reject) => {
       const formData = new FormData();
       formData.append("file", f);
-      formData.append("upload_preset", "documents");
+      formData.append("upload_preset", "document");
 
       const xhr = new XMLHttpRequest();
 
