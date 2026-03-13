@@ -71,63 +71,69 @@ export const Navbar = () => {
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     // If it's a hash link on the current page
     if (href.startsWith("/#") || href.startsWith("#")) {
       const targetId = href.replace(/^\/?#/, "");
-      
+
       // If we are already on the home page (where these sections live)
       if (window.location.pathname === "/") {
         e.preventDefault();
-        
+
         // Use a short timeout to let the UI update (especially menu closing) before calculating positions
         setTimeout(() => {
           const element = document.getElementById(targetId);
           if (element) {
             // Update URL hash without jumping (optional, but good for state)
             window.history.pushState(null, "", `/#${targetId}`);
-            
+
             if (["1", "2", "3", "4", "5"].includes(targetId)) {
               // 1. Scroll the section vertically
               const servicesSection = document.getElementById("services");
               if (servicesSection) {
-                const navBar = document.querySelector('nav');
+                const navBar = document.querySelector("nav");
                 const navHeight = navBar ? navBar.offsetHeight : 80;
-                const sectionPos = servicesSection.getBoundingClientRect().top + window.scrollY;
+                const sectionPos =
+                  servicesSection.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({
                   top: sectionPos - navHeight,
-                  behavior: "smooth"
+                  behavior: "smooth",
                 });
               }
               // 2. Scroll the card horizontally within its container
-              const container = element.closest('.overflow-x-auto');
+              const container = element.closest(".overflow-x-auto");
               if (container) {
                 const containerRect = container.getBoundingClientRect();
                 const elementRect = element.getBoundingClientRect();
-                const scrollPos = container.scrollLeft + (elementRect.left - containerRect.left) - (containerRect.width / 2) + (elementRect.width / 2);
+                const scrollPos =
+                  container.scrollLeft +
+                  (elementRect.left - containerRect.left) -
+                  containerRect.width / 2 +
+                  elementRect.width / 2;
                 container.scrollTo({
                   left: scrollPos,
-                  behavior: "smooth"
+                  behavior: "smooth",
                 });
               }
             } else {
               // Calculate position with offset for sticky navbar
-              const navBar = document.querySelector('nav');
+              const navBar = document.querySelector("nav");
               const navHeight = navBar ? navBar.offsetHeight : 80;
-              const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-              
+              const elementPosition =
+                element.getBoundingClientRect().top + window.scrollY;
+
               // Smooth scroll to the element
               window.scrollTo({
                 top: elementPosition - navHeight,
-                behavior: "smooth"
+                behavior: "smooth",
               });
             }
           }
         }, 50);
       }
     }
-    
+
     setIsMobileMenuOpen(false);
   };
 
@@ -225,7 +231,7 @@ export const Navbar = () => {
         </div>
         {/* Mobile Menu */}
         <div
-          className={`absolute left-0 top-full lg:hidden overflow-hidden w-full flex flex-col items-center bg-[#FFFFFF] gap-8 ${isMobileMenuOpen ? " h-[100vh] pt-12 shadow-2xl border-t border-gray-100/50" : "h-0 border-t-0 shadow-none"} transition-all duration-300 ease-in-out`}
+          className={`absolute left-0 top-full lg:hidden overflow-hidden w-full flex flex-col items-center bg-[#FFFFFF] gap-8 ${isMobileMenuOpen ? " h-screen pt-12 shadow-2xl border-t border-gray-100/50" : "h-0 border-t-0 shadow-none"} transition-all duration-300 ease-in-out`}
         >
           {navItemsMobile?.map((item) => (
             <Link

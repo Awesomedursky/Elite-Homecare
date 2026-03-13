@@ -92,7 +92,7 @@ const Donate = () => {
       relative
       flex flex-col lg:justify-end
       w-full
-       h-[153px] sm:h-40 md:h-[30vh]
+       h-38.25 sm:h-40 md:h-[30vh]
       lg:h-auto
       lg:w-117.5
       lg:min-w-[35%] lg:max-w-[40%]
