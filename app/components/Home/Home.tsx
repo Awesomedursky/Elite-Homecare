@@ -17,7 +17,7 @@ export const HeroPage = () => {
   return (
     <>
       <HeroSection />
-      <section className=" border-b border-[#E2E8F0] w-full px-6 md:px-10  xl:px-0 py-5 lg:py-10">
+      <section className=" border-b border-[#E2E8F0] w-full px-6 md:px-10  xl:px-6 2xl:px-0 py-5 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between gap-x-10 overflow-x-auto scrollbar-hide">
             {sectionItems.map((item, idx) => (

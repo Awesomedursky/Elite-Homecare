@@ -110,7 +110,7 @@ export const TrustedHomeCareServices = () => {
 
   return (
     <section className="py-10 lg:py-20 bg-white scroll-mt-20" id="services">
-      <div className="max-w-7xl px-6 md:px-10 xl:px-0 mx-auto">
+      <div className="max-w-7xl px-6 md:px-10 xl:px-6 2xl:px-0 mx-auto">
         {/* Title Section */}
         <div className="text-center mb-4 md:mb-8 lg:mb-16 space-y-3 lg:space-y-4">
           <h2 className="text-(--dark-blue) font-bold text-[28px] md:text-3xl lg:text-4xl xl:text-[40px]">

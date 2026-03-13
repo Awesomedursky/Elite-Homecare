@@ -21,7 +21,7 @@ export const HowItWorks = () => {
   ];
   return (
     <div
-      className="relative w-full py-20  px-6 md:px-10 xl:px-0 overflow-hidden scroll-mt-20"
+      className="relative w-full py-20  px-6 md:px-10 xl:px-6 2xl:px-0 overflow-hidden scroll-mt-20"
       id="how-it-works"
     >
       {/* Layer 1: Base Image */}

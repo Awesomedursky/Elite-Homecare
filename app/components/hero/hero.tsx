@@ -27,7 +27,7 @@ export const HeroSection = () => {
 
       {/* 3. Hero Content */}
       {path === "about-us" ? (
-        <div className="max-w-7xl mx-auto px-6 md:px-10  xl:px-0 flex flex-col lg:flex-row gap-x-10 gap-y-3 lg:gap-y-0 items-center lg:items-start justify-between w-full lg:pb-14">
+        <div className="max-w-7xl mx-auto px-6 md:px-10  xl:px-6 2xl:px-0 flex flex-col lg:flex-row gap-x-10 gap-y-3 lg:gap-y-0 items-center lg:items-start justify-between w-full lg:pb-14">
           <div className="space-y-4 text-center lg:text-left lg:w-xl xl:min-w-2xl">
             <h3 className=" font-bold text-xl text-(--secondary) lg:text-white  mx-auto lg:mx-0">
               About Us
@@ -78,12 +78,13 @@ export const HeroSection = () => {
                     window.history.pushState(null, "", "/#services");
                     const element = document.getElementById("services");
                     if (element) {
-                      const navBar = document.querySelector('nav');
+                      const navBar = document.querySelector("nav");
                       const navHeight = navBar ? navBar.offsetHeight : 80;
-                      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                      const elementPosition =
+                        element.getBoundingClientRect().top + window.scrollY;
                       window.scrollTo({
                         top: elementPosition - navHeight,
-                        behavior: "smooth"
+                        behavior: "smooth",
                       });
                     }
                   }

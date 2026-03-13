@@ -7,7 +7,7 @@ export const JoinOurCareTeam = () => {
   return (
     <div
       id="joinCareTeam"
-      className=" max-w-208.5 mx-auto text-center px-6 md:px-10  xl:px-0 py-10 space-y-12.5 scroll-mt-20"
+      className=" max-w-208.5 mx-auto text-center px-6 md:px-10  xl:px-6 2xl:px-0 py-10 space-y-12.5 scroll-mt-20"
     >
       <div className=" flex flex-col space-y-7.5 items-center">
         <div className=" space-y-1.5 lg:space-y-3.5 px-3">

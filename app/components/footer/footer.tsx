@@ -68,7 +68,7 @@ export const Footer = () => {
         <BsArrowUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
       </button>
 
-      <div className="mx-auto  px-6 md:px-10  xl:px-0  xl:max-w-7xl flex justify-between lg:pt-20 pb-10 py-10 flex-col md:flex-row gap-5 sm:gap-10 md:gap-0 ">
+      <div className="mx-auto  px-6 md:px-10  xl:px-6 2xl:px-0  xl:max-w-7xl flex justify-between lg:pt-20 pb-10 py-10 flex-col md:flex-row gap-5 sm:gap-10 md:gap-0 ">
         {/*footer image and text */}
         <div className="flex flex-col gap-3.5 ">
           <Link href="/">
@@ -100,7 +100,10 @@ export const Footer = () => {
                   key={idx}
                   href={i.href}
                   onClick={(e) => {
-                    if (window.location.pathname === "/" && i.href.startsWith("/#")) {
+                    if (
+                      window.location.pathname === "/" &&
+                      i.href.startsWith("/#")
+                    ) {
                       e.preventDefault();
                       const targetId = i.href.replace(/^\/?#/, "");
                       window.history.pushState(null, "", i.href);
@@ -108,7 +111,8 @@ export const Footer = () => {
                       if (element) {
                         const navBar = document.querySelector("nav");
                         const navHeight = navBar ? navBar.offsetHeight : 80;
-                        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                        const elementPosition =
+                          element.getBoundingClientRect().top + window.scrollY;
                         window.scrollTo({
                           top: elementPosition - navHeight,
                           behavior: "smooth",
@@ -131,7 +135,8 @@ export const Footer = () => {
             </h4>
             <div className=" flex flex-col gap-2">
               {contacts.map((i, idx) => {
-                const isExternal = i.href.startsWith("mailto:") || i.href.startsWith("tel:");
+                const isExternal =
+                  i.href.startsWith("mailto:") || i.href.startsWith("tel:");
                 return isExternal ? (
                   <a
                     key={idx}
@@ -152,7 +157,10 @@ export const Footer = () => {
                     key={idx}
                     href={i.href}
                     onClick={(e) => {
-                      if (window.location.pathname === "/" && i.href.startsWith("/#")) {
+                      if (
+                        window.location.pathname === "/" &&
+                        i.href.startsWith("/#")
+                      ) {
                         e.preventDefault();
                         const targetId = i.href.replace(/^\/?#/, "");
                         window.history.pushState(null, "", i.href);
@@ -160,7 +168,9 @@ export const Footer = () => {
                         if (element) {
                           const navBar = document.querySelector("nav");
                           const navHeight = navBar ? navBar.offsetHeight : 80;
-                          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                          const elementPosition =
+                            element.getBoundingClientRect().top +
+                            window.scrollY;
                           window.scrollTo({
                             top: elementPosition - navHeight,
                             behavior: "smooth",

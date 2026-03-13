@@ -25,28 +25,6 @@ export const HowToSupport = () => {
   );
   const [open, setOpen] = useState(false);
 
-  const handleCheckout = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const data = await res.json();
-
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        showToast("Something went wrong. Please try again.", "error");
-      }
-    } catch {
-      showToast("Network error. Please try again.", "error");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const items = [
     {
       icon: Love,
@@ -89,7 +67,7 @@ export const HowToSupport = () => {
   return (
     <div
       id="donation"
-      className="max-w-7xl mx-auto lg:px-10 xl:px-0 lg:py-10 scroll-m-20"
+      className="max-w-7xl mx-auto lg:px-10 xl:px-6 2xl:px-0 lg:py-10 scroll-m-20"
     >
       <section className="  lg:rounded-[40px] bg-[#F1F5F9] py-10 lg:py-25 text-center px-6  flex flex-col space-y-5">
         <div className=" space-y-3.5 max-w-191.25 mx-auto">
