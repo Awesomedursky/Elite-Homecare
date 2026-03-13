@@ -91,7 +91,7 @@ const Donate = () => {
       relative
       flex flex-col lg:justify-end
       w-full
-       h-[50vh] sm:h-80 md:h-[50vh]
+       h-[20vh] sm:h-40 md:h-[30vh]
       lg:h-auto
       lg:w-117.5
       lg:min-w-[35%] lg:max-w-[40%]
@@ -105,7 +105,7 @@ const Donate = () => {
               alt="Support Our Mission"
               fill
               placeholder="blur"
-              className=" object-cover"
+              className="object-cover object-center"
               priority
             />
           </div>
