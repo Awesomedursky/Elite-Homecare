@@ -13,9 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaCheckCircle, FaSpinner } from "react-icons/fa";
 import logo from "@/public/images/logo.png";
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
-);
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY!);
 
 export default function StripeCheckoutModal({
   open,
