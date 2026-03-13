@@ -227,7 +227,7 @@ function PaymentForm({
 
       <button
         disabled={!stripe || loading}
-        className="w-full bg-(--secondary) text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-(--secondary)/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer "
+        className="w-full bg-(--dark-blue) text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-(--dark-blue)/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer "
       >
         {loading && <FaSpinner className="animate-spin" />}
         {loading ? "Processing..." : "Support Now"}
