@@ -143,7 +143,7 @@ export const Navbar = () => {
         isScrolled ? "shadow-[0_4px_20px_rgba(0,0,0,0.06)]" : ""
       }`}
     >
-      <div className=" mx-auto  max-w-7xl">
+      <div className=" mx-auto  2xl:max-w-7xl xl:max-w-6xl w-full">
         <div
           className={`flex px-6 md:px-10 xl:px-6 2xl:px-0 justify-between items-center h-[8vh] lg:h-20.5   ${isMobileMenuOpen ? " shadow-[0_8px_20px_rgba(0,0,0,0.06)] drop-shadow-2xl" : ""}`}
         >

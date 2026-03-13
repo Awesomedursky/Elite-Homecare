@@ -51,8 +51,8 @@ export const Footer = () => {
     },
     {
       icon: message,
-      name: "contact@myelitehomecare.com",
-      href: "mailto:contact@myelitehomecare.com",
+      name: "contact@myelitehomecare.org",
+      href: "mailto:contact@myelitehomecare.org",
     },
   ];
 
@@ -68,7 +68,7 @@ export const Footer = () => {
         <BsArrowUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
       </button>
 
-      <div className="mx-auto  px-6 md:px-10  xl:px-6 2xl:px-0  xl:max-w-7xl flex justify-between lg:pt-20 pb-10 py-10 flex-col md:flex-row gap-5 sm:gap-10 md:gap-0 ">
+      <div className="mx-auto w-full px-6 md:px-10  xl:px-6 2xl:px-0  2xl:max-w-7xl xl:max-w-6xl flex justify-between lg:pt-20 pb-10 py-10 flex-col md:flex-row gap-5 sm:gap-10 md:gap-0 ">
         {/*footer image and text */}
         <div className="flex flex-col gap-3.5 ">
           <Link href="/">

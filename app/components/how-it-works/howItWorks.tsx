@@ -21,7 +21,7 @@ export const HowItWorks = () => {
   ];
   return (
     <div
-      className="relative w-full py-20  px-6 md:px-10 xl:px-6 2xl:px-0 overflow-hidden scroll-mt-20"
+      className="relative  py-20  px-6 md:px-10 xl:px-6 2xl:px-0 overflow-hidden scroll-mt-20"
       id="how-it-works"
     >
       {/* Layer 1: Base Image */}
@@ -34,7 +34,7 @@ export const HowItWorks = () => {
         />
       </div>
 
-      <div className="max-w-7xl flex flex-col mx-auto space-y-6 lg:space-y-10 xl:space-y-12">
+      <div className=" w-full 2xl:max-w-7xl xl:max-w-6xl  flex flex-col mx-auto space-y-6 lg:space-y-10 xl:space-y-12">
         {/* Title Section */}
         <div className="text-center md:space-y-4">
           <h3 className="text-[#001953] font-bold text-[28px] md:text-3xl  lg:text-4xl xl:text-[40px]">
@@ -50,7 +50,7 @@ export const HowItWorks = () => {
         <div className="relative w-full">
           {/* The Connecting Line Background */}
           {/* Positioned at the top to align specifically with the balls' vertical center */}
-          <div className="absolute top-7.5 left-5 md:left-5 lg:left-0 h-full w-0.5 lg:w-full lg:h-0.5 bg-[#E2E8F0] z-0" />
+          <div className="absolute top-7.5 left-5 md:left-5 lg:left-0 h-full w-0.5 lg:w-full lg:h-0.5 bg-[#E2E8F0] z-0 2xl:max-w-7xl xl:max-w-6xl" />
 
           {/* Integrated Ball and Details Container */}
           <div className="relative z-10 flex flex-col lg:flex-row justify-around gap-y-5 lg:gap-x-21 items-start top-10 lg:top-0">

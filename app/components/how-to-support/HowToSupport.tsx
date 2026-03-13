@@ -67,7 +67,7 @@ export const HowToSupport = () => {
   return (
     <div
       id="donation"
-      className="max-w-7xl mx-auto lg:px-10 xl:px-6 2xl:px-0 lg:py-10 scroll-m-20"
+      className="2xl:max-w-7xl xl:max-w-6xl w-full mx-auto lg:px-10 xl:px-6 2xl:px-0 lg:py-10 scroll-m-20"
     >
       <section className="  lg:rounded-[40px] bg-[#F1F5F9] py-10 lg:py-25 text-center px-6  flex flex-col space-y-5">
         <div className=" space-y-3.5 max-w-191.25 mx-auto">

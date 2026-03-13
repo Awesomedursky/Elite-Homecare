@@ -114,7 +114,7 @@ const ContactUs = () => {
 
   return (
     <main className="min-h-screen bg-white scroll-mt-20 relative">
-      <section className="max-w-7xl mx-auto px-6 md:px-10  xl:px-0 py-8 lg:py-12">
+      <section className="2xl:max-w-7xl xl:max-w-6xl w-full mx-auto px-6 md:px-10  xl:px-0 py-8 lg:py-12">
         <div className=" lg:flex gap-10 lg:gap-12 items-start ">
           {/* Left: Form */}
           <div className="bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-3 sm:p-6 lg:p-8 scrollbar-hide overflow-y-auto w-full lg:w-[60%]">

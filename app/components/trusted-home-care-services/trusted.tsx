@@ -110,7 +110,7 @@ export const TrustedHomeCareServices = () => {
 
   return (
     <section className="py-10 lg:py-20 bg-white scroll-mt-20" id="services">
-      <div className="max-w-7xl px-6 md:px-10 xl:px-6 2xl:px-0 mx-auto">
+      <div className="2xl:max-w-7xl xl:max-w-6xl w-full px-6 md:px-10 xl:px-6 2xl:px-0 mx-auto">
         {/* Title Section */}
         <div className="text-center mb-4 md:mb-8 lg:mb-16 space-y-3 lg:space-y-4">
           <h2 className="text-(--dark-blue) font-bold text-[28px] md:text-3xl lg:text-4xl xl:text-[40px]">
@@ -139,9 +139,9 @@ export const TrustedHomeCareServices = () => {
                 id={id}
                 key={id}
                 className={`
-                  relative flex-none h-64 md:h-75 lg:h-95 xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
+                  relative flex-none h-64 md:h-75 lg:h-95 xl:h-100 2xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
                   transition-all duration-500 ease-out hover:scale-105 active:scale-105
-                  w-70 md:w-78 lg:w-105 xl:w-136
+                  w-70 md:w-78 lg:w-105 xl:w-120 2xl:w-136
                 `}
               >
                 {/* Background */}

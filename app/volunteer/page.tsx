@@ -84,7 +84,7 @@ const Donate = () => {
   };
 
   return (
-    <section className="max-w-7xl w-full mx-auto lg:px-10 xl:px-0   scroll-mt-20">
+    <section className="2xl:max-w-7xl xl:max-w-6xl w-full mx-auto lg:px-10 xl:px-0   scroll-mt-20">
       <div className="lg:rounded-[40px] lg:border border-[#D8E0E9] my-6 drop-shadow-[0_4px_4px_rgba(216,224,233,0.5)] flex flex-col lg:flex-row w-full justify-between gap-5 lg:gap-x-10 overflow-hidden lg:h-[86vh]">
         {/* LEFT SIDE — IMAGE */}
         <div

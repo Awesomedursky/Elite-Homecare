@@ -7,7 +7,7 @@ export const JoinOurCareTeam = () => {
   return (
     <div
       id="joinCareTeam"
-      className=" max-w-208.5 mx-auto text-center px-6 md:px-10  xl:px-6 2xl:px-0 py-10 space-y-12.5 scroll-mt-20"
+      className="max-w-208.5 w-full mx-auto text-center px-6 md:px-10  xl:px-6 2xl:px-0 py-10 space-y-12.5 scroll-mt-20"
     >
       <div className=" flex flex-col space-y-7.5 items-center">
         <div className=" space-y-1.5 lg:space-y-3.5 px-3">
@@ -34,7 +34,7 @@ export const JoinOurCareTeam = () => {
         </div>
       </div>
 
-      <div className="relative w-full max-w-6xl h-60  md:h-75 lg:h-96.25 overflow-hidden ">
+      <div className="relative w-full  mx-auto h-60  md:h-75 lg:h-96.25 overflow-hidden ">
         {/* Left Image */}
         <div className="absolute left-0 top-0 z-10 w-[56%] h-full rounded-2xl lg:rounded-[40px] overflow-hidden">
           <Image

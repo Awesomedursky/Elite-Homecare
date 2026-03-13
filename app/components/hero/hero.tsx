@@ -27,7 +27,7 @@ export const HeroSection = () => {
 
       {/* 3. Hero Content */}
       {path === "about-us" ? (
-        <div className="max-w-7xl mx-auto px-6 md:px-10  xl:px-6 2xl:px-0 flex flex-col lg:flex-row gap-x-10 gap-y-3 lg:gap-y-0 items-center lg:items-start justify-between w-full lg:pb-14">
+        <div className="2xl:max-w-7xl xl:max-w-6xl mx-auto px-6 md:px-10  xl:px-6 2xl:px-0 flex flex-col lg:flex-row gap-x-10 gap-y-3 lg:gap-y-0 items-center lg:items-start justify-between w-full lg:pb-14">
           <div className="space-y-4 text-center lg:text-left lg:w-xl xl:min-w-2xl">
             <h3 className=" font-bold text-xl text-(--secondary) lg:text-white  mx-auto lg:mx-0">
               About Us
@@ -47,7 +47,7 @@ export const HeroSection = () => {
           </div>
         </div>
       ) : (
-        <div className="max-w-7xl mx-auto px-6 md:px-10  xl:px-0 w-full flex justify-center items-center text-center h-full">
+        <div className="2xl:max-w-7xl xl:max-w-6xl mx-auto px-6 md:px-10  xl:px-0 w-full flex justify-center items-center text-center h-full">
           <div className=" lg:max-w-4xl">
             <h1 className="text-white font-semibold text-3xl sm:text-4xl  lg:text-[64px] mb-6 leading-[1.2] lg:leading-[1.3]">
               Compassionate <br className=" max-sm:block hidden" />

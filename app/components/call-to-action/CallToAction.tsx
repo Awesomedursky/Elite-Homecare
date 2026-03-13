@@ -17,8 +17,8 @@ export const CallToAction = () => {
   };
 
   return (
-    <div className=" lg:px-10 xl:px-6 2xl:px-0">
-      <div className=" bg-[#002270] lg:rounded-[40px]  max-w-7xl mx-auto my-5 lg:my-10 py-10 lg:py-20 flex flex-col space-y-10 relative overflow-hidden px-6">
+    <div className=" 2xl:max-w-7xl xl:max-w-6xl mx-auto lg:px-10  xl:px-6 2xl:px-0 ">
+      <div className=" bg-[#002270] lg:rounded-[40px]   my-5 lg:my-10 py-10 lg:py-20 flex flex-col space-y-10 relative overflow-hidden px-6">
         <div className="absolute inset-0 h-full w-full">
           <Image
             src={dots}
