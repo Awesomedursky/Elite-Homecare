@@ -119,12 +119,12 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-white scroll-mt-20 relative">
       <section className="md:py-8 lg:py-12">
-        <div className="2xl:max-w-7xl xl:max-w-6xl w-full mx-auto px-6 md:px-10  xl:px-0 py-8 sm:py-0 sm:px-6">
+        <div className="2xl:max-w-7xl xl:max-w-6xl mx-auto lg:px-10  xl:px-6 2xl:px-0  py-8 sm:py-0 px-6 md:px-10">
           <div className="bg-white">
             <div className="md:flex gap-5 lg:gap-10 items-start ">
               {/* Left: Image and description */}
-              <div className="hidden sticky top-20 lg:flex lg:w-[40%] md:h-[65vh]  flex-col lg:gap-y-10">
-                <div className="relative overflow-hidden bg-[#e8f4fc]  rounded-4xl md:h-[90%] lg:full">
+              <div className="hidden sticky top-24 lg:flex lg:w-[45%] md:h-[83vh]  flex-col lg:gap-y-5">
+                <div className="relative overflow-hidden bg-[#e8f4fc]  rounded-4xl md:h-[80vh] lg:full">
                   <Image
                     src={caregiverBeforeJob}
                     alt="caregiver job"
@@ -141,7 +141,7 @@ export default function CareersPage() {
               </div>
 
               {/* Right: Application form */}
-              <div className="lg:w-[60%] bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-6 sm:p-6 lg:p-8 scrollbar-hide overflow-y-auto w-full">
+              <div className="lg:w-[55%] bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-6 sm:p-6 lg:p-8 scrollbar-hide overflow-y-auto w-full">
                 <p className="text-(--secondary) font-bold text-sm sm:text-base lg:text-lg  mb-2">
                   Join Our Care Team
                 </p>

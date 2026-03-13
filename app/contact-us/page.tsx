@@ -114,7 +114,7 @@ const ContactUs = () => {
 
   return (
     <main className="min-h-screen bg-white scroll-mt-20 relative">
-      <section className="2xl:max-w-7xl xl:max-w-6xl w-full mx-auto px-6 md:px-10  xl:px-0 py-8 lg:py-12">
+      <section className="2xl:max-w-7xl xl:max-w-6xl mx-auto lg:px-10  xl:px-6 2xl:px-0 px-6 md:px-10 py-8 lg:py-12">
         <div className=" lg:flex gap-10 lg:gap-12 items-start ">
           {/* Left: Form */}
           <div className="bg-white rounded-2xl drop-shadow-[#D8E0E9] shadow-md border border-gray-100 p-3 sm:p-6 lg:p-8 scrollbar-hide overflow-y-auto w-full lg:w-[60%]">
@@ -220,7 +220,7 @@ const ContactUs = () => {
           </div>
 
           {/* Right: Contact info & image */}
-          <div className="hidden lg:block  w-[40%] sticky top-20">
+          <div className="hidden lg:block  w-[40%] sticky top-24">
             <div className="relative overflow-hidden bg-[#e8f4fc]  rounded-4xl w-full h-[63vh]">
               <Image
                 src={RemoveTheStars}
