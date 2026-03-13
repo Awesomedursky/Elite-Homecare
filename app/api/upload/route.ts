@@ -24,9 +24,10 @@ export async function POST(request: Request) {
         const uploadStream = cloudinary.uploader.upload_stream(
           {
             resource_type: "raw",
-            use_filename: true,
-            unique_filename: true,
             public_id: file.name,
+            use_filename: false,
+            unique_filename: true,
+            folder: "documents",
           },
           (error, result) => {
             if (error) reject(error);

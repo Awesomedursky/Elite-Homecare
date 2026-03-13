@@ -8,6 +8,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { TbShare } from "react-icons/tb";
 import { useCallback, useState } from "react";
 import { Toast } from "../atoms/Toast";
+import StripeCheckoutModal from "../stripe-checkout-modal";
 
 export const HowToSupport = () => {
   const [loading, setLoading] = useState(false);
@@ -22,6 +23,7 @@ export const HowToSupport = () => {
     },
     [],
   );
+  const [open, setOpen] = useState(false);
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -142,10 +144,11 @@ export const HowToSupport = () => {
                     </button>
                   ) : (
                     <button
-                      onClick={handleCheckout}
+                      // onClick={handleCheckout}
+                      onClick={() => setOpen(true)}
                       className="bg-(--dark-blue) bg-size-[200%_100%] bg-position-[0%_0%]  hover:bg-[linear-gradient(90deg,#003485_0%,#003485_50%,#CF5364_100%)] hover:bg-position-[100%_0%] hover:shadow-xl text-white px-3 sm:px-4 lg:px-6 py-2 sm:py-3  lg:py-4 rounded-xl md:rounded-[20px] font-semibold shadow-md transition-all  duration-300 cursor-pointer flex gap-x-1"
                     >
-                      {loading ? (
+                      {/* {loading ? (
                         <>
                           <svg
                             className="animate-spin h-5 w-5 text-white"
@@ -172,7 +175,8 @@ export const HowToSupport = () => {
                         </>
                       ) : (
                         "Contribute Today"
-                      )}
+                      )} */}
+                      Contribute Today
                     </button>
                   )}
                 </div>
@@ -188,6 +192,7 @@ export const HowToSupport = () => {
           onClose={() => setToast(null)}
         />
       )}
+      <StripeCheckoutModal open={open} onClose={() => setOpen(false)} />
     </div>
   );
 };

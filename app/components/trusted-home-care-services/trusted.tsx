@@ -15,7 +15,6 @@ import Link from "next/link";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 export const TrustedHomeCareServices = () => {
-  const [activeCards, setActiveCards] = useState<Set<string>>(new Set());
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -48,18 +47,6 @@ export const TrustedHomeCareServices = () => {
     const x = e.pageX - scrollRef.current.offsetLeft;
     const walk = (x - startX.current) * 1.5; // speed multiplier
     scrollRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
-  const toggleCard = (id: string) => {
-    setActiveCards((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(id)) {
-        newSet.delete(id);
-      } else {
-        newSet.add(id);
-      }
-      return newSet;
-    });
   };
 
   const scroll = (direction: "left" | "right") => {
@@ -147,17 +134,14 @@ export const TrustedHomeCareServices = () => {
             flex gap-3  lg:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth p-2 lg:p-5 scroll-mt-20 cursor-grab`}
         >
           {sliderItem.map(({ id, icon, image, title, subtitle }) => {
-            const isActive = activeCards.has(id);
-
             return (
               <div
                 id={id}
                 key={id}
-                onClick={() => toggleCard(id)}
                 className={`
                   relative flex-none h-64 md:h-75 lg:h-95 xl:h-116.25 rounded-2xl lg:rounded-[40px] overflow-hidden snap-center cursor-pointer
-                  transition-all duration-500 ease-out hover:scale-105
-                  ${isActive ? "w-28 lg:w-58" : "w-70 md:w-78 lg:w-105 xl:w-136 "}
+                  transition-all duration-500 ease-out hover:scale-105 active:scale-105
+                  w-70 md:w-78 lg:w-105 xl:w-136
                 `}
               >
                 {/* Background */}
@@ -176,24 +160,16 @@ export const TrustedHomeCareServices = () => {
                 {/* Content */}
                 <div
                   className={`absolute z-20 bg-[linear-gradient(180deg,rgba(0,52,133,0.12)_14.04%,#003991_114.49%),linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))]    flex items-center lg:justify-center    transition-all duration-500
-    ${
-      isActive
-        ? `  block w-xs lg:w-lg lg:text-center  md:h-22 xl:h-24
-          top-full left-0
-          -rotate-90
-          origin-top-left
-          p-6
-        `
-        : "bottom-0 left-0 right-0 p-1.5 lg:p-6 xl:p-8 gap-1.5 lg:gap-4 items-start"
-    }
+      bottom-0 left-0 right-0 p-1.5 lg:p-6 xl:p-8 gap-1.5 lg:gap-4
+    
   `}
                 >
                   {/* Icon */}
-                  {!isActive && (
+                  {/* {!isActive && (
                     <div className="shrink lg:shrink-0 shadow-lg transition-all duration-300">
                       <Image src={icon} alt="icon" />
                     </div>
-                  )}
+                  )} */}
 
                   {/* Text */}
                   <div className=" space-y-1 lg:space-y-2">
@@ -201,11 +177,11 @@ export const TrustedHomeCareServices = () => {
                       {title}
                     </h3>
 
-                    {!isActive && (
-                      <p className="text-white/90 text-xs md:text-xs lg:text-sm lg:leading-relaxed ">
-                        {subtitle}
-                      </p>
-                    )}
+                    {/* {!isActive && ( */}
+                    <p className="text-white/90 text-xs md:text-xs lg:text-sm lg:leading-relaxed ">
+                      {subtitle}
+                    </p>
+                    {/* )} */}
                   </div>
                 </div>
               </div>

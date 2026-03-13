@@ -47,9 +47,9 @@ export const Navbar = () => {
       name: "Services",
       href: "/#services",
     },
-    { name: "How it works", href: "#how-it-works" },
+    { name: "How it works", href: "/#how-it-works" },
     { name: "About Us", href: "/about-us" },
-    { name: "Careers", href: "/careers" },
+    { name: "Careers", href: "/#joinCareTeam" },
     { name: "Support", href: "/volunteer" },
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,6 +67,31 @@ export const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    // If it's a hash link on the current page
+    if (href.startsWith("/#") || href.startsWith("#")) {
+      const targetId = href.replace(/^\/?#/, "");
+      
+      // If we are already on the home page (where these sections live)
+      if (window.location.pathname === "/") {
+        e.preventDefault();
+        const element = document.getElementById(targetId);
+        if (element) {
+          // Update URL hash without jumping (optional, but good for state)
+          window.history.pushState(null, "", `/#${targetId}`);
+          
+          // Smooth scroll to the element
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+    
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -107,6 +132,7 @@ export const Navbar = () => {
               >
                 <Link
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="text-(--text-color) hover:text-(--primary) font-medium transition-colors duration-300 flex items-center text-sm xl:text-base"
                 >
                   {item.name}
@@ -125,6 +151,7 @@ export const Navbar = () => {
                         <Link
                           key={idx}
                           href={sub.href}
+                          onClick={(e) => handleNavClick(e, sub.href)}
                           className="block px-5 py-3 text-sm text-text-navy hover:bg-gray-50 hover:text-primary transition-colors relative z-10"
                         >
                           {sub.title}
@@ -165,7 +192,7 @@ export const Navbar = () => {
         >
           {navItemsMobile?.map((item) => (
             <Link
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, item.href)}
               key={item.name}
               href={item.href}
               className="text-[rgba(0,19,63,1)] font-medium text-base"

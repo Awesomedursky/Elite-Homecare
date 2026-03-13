@@ -47,12 +47,12 @@ export const Footer = () => {
     {
       icon: phone,
       name: "+1 (234) 327-0909",
-      href: "#",
+      href: "",
     },
     {
       icon: message,
       name: "contact@myelitehomecare.com",
-      href: "#",
+      href: "mailto:contact@myelitehomecare.com",
     },
   ];
 

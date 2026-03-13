@@ -90,43 +90,65 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-export async function POST() {
-  try {
-    const price = await stripe.prices.create({
-      currency: "usd",
-      custom_unit_amount: {
-        enabled: true,
-        minimum: 100,
-        preset: 1000,
-      },
-      product_data: {
-        name: "Donation",
-      },
-    });
+// export async function POST() {
+//   try {
+//     const price = await stripe.prices.create({
+//       currency: "usd",
+//       custom_unit_amount: {
+//         enabled: true,
+//         minimum: 100,
+//         preset: 1000,
+//       },
+//       product_data: {
+//         name: "Donation",
+//       },
+//     });
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+//     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
-    const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      submit_type: "donate",
+//     const session = await stripe.checkout.sessions.create({
+//       mode: "payment",
+//       submit_type: "donate",
 
-      line_items: [
-        {
-          price: price.id,
-          quantity: 1,
-        },
-      ],
+//       line_items: [
+//         {
+//           price: price.id,
+//           quantity: 1,
+//         },
+//       ],
 
-      success_url: `${baseUrl}/success/payment`,
-      cancel_url: `${baseUrl}`,
-    });
+//       success_url: `${baseUrl}/success/payment`,
+//       cancel_url: `${baseUrl}`,
+//     });
 
-    return NextResponse.json({ url: session.url });
-  } catch (error: any) {
-    console.error("Stripe Error:", error);
+//     return NextResponse.json({ url: session.url });
+//   } catch (error: any) {
+//     console.error("Stripe Error:", error);
 
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+//     return NextResponse.json({ error: error.message }, { status: 500 });
+//   }
+// }
+
+import { NextRequest } from "next/server";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: "2026-02-25.clover",
+});
+
+export async function POST(req: NextRequest) {
+  const { amount } = await req.json();
+
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: Math.round(amount * 100),
+    currency: "usd",
+    automatic_payment_methods: {
+      enabled: true,
+    },
+  });
+
+  return NextResponse.json({
+    clientSecret: paymentIntent.client_secret,
+  });
 }
