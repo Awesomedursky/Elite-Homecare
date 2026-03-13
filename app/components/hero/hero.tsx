@@ -72,6 +72,22 @@ export const HeroSection = () => {
               </Link>
               <Link
                 href="/#services"
+                onClick={(e) => {
+                  if (window.location.pathname === "/") {
+                    e.preventDefault();
+                    window.history.pushState(null, "", "/#services");
+                    const element = document.getElementById("services");
+                    if (element) {
+                      const navBar = document.querySelector('nav');
+                      const navHeight = navBar ? navBar.offsetHeight : 80;
+                      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                      window.scrollTo({
+                        top: elementPosition - navHeight,
+                        behavior: "smooth"
+                      });
+                    }
+                  }
+                }}
                 className="sm:bg-white  transform hover:bg-[#FFEBEE] px-6 py-3   sm:px-6 sm:py-4 lg:w-63  rounded-full text-white sm:text-(--primary) font-bold transition-all cursor-pointer"
               >
                 Our Services

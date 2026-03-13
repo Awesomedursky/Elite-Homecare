@@ -47,7 +47,7 @@ export const Footer = () => {
     {
       icon: phone,
       name: "+1 (234) 327-0909",
-      href: "",
+      href: "tel:+12343270909",
     },
     {
       icon: message,
@@ -99,6 +99,23 @@ export const Footer = () => {
                 <Link
                   key={idx}
                   href={i.href}
+                  onClick={(e) => {
+                    if (window.location.pathname === "/" && i.href.startsWith("/#")) {
+                      e.preventDefault();
+                      const targetId = i.href.replace(/^\/?#/, "");
+                      window.history.pushState(null, "", i.href);
+                      const element = document.getElementById(targetId);
+                      if (element) {
+                        const navBar = document.querySelector("nav");
+                        const navHeight = navBar ? navBar.offsetHeight : 80;
+                        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                        window.scrollTo({
+                          top: elementPosition - navHeight,
+                          behavior: "smooth",
+                        });
+                      }
+                    }
+                  }}
                   className=" text-white font-medium text-xs sm:text-sm lg:text-base pb-3.5 hover:scale-105 transition-all duration-300 text-nowrap"
                 >
                   {i.name}
@@ -113,22 +130,57 @@ export const Footer = () => {
               CONTACT
             </h4>
             <div className=" flex flex-col gap-2">
-              {contacts.map((i, idx) => (
-                <Link
-                  key={idx}
-                  href={i.href}
-                  className=" text-white font-medium text-xs sm:text-sm lg:text-base pb-3.5 hover:scale-105 transition-all duration-300 flex items-center gap-x-1.5"
-                >
-                  <span className="block">
-                    <Image
-                      src={i.icon}
-                      alt="icon"
-                      className=" size-4 sm:size-5 lg:size-6"
-                    />
-                  </span>
-                  {i.name}
-                </Link>
-              ))}
+              {contacts.map((i, idx) => {
+                const isExternal = i.href.startsWith("mailto:") || i.href.startsWith("tel:");
+                return isExternal ? (
+                  <a
+                    key={idx}
+                    href={i.href}
+                    className=" text-white font-medium text-xs sm:text-sm lg:text-base pb-3.5 hover:scale-105 transition-all duration-300 flex items-center gap-x-1.5"
+                  >
+                    <span className="block">
+                      <Image
+                        src={i.icon}
+                        alt="icon"
+                        className=" size-4 sm:size-5 lg:size-6"
+                      />
+                    </span>
+                    {i.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={idx}
+                    href={i.href}
+                    onClick={(e) => {
+                      if (window.location.pathname === "/" && i.href.startsWith("/#")) {
+                        e.preventDefault();
+                        const targetId = i.href.replace(/^\/?#/, "");
+                        window.history.pushState(null, "", i.href);
+                        const element = document.getElementById(targetId);
+                        if (element) {
+                          const navBar = document.querySelector("nav");
+                          const navHeight = navBar ? navBar.offsetHeight : 80;
+                          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                          window.scrollTo({
+                            top: elementPosition - navHeight,
+                            behavior: "smooth",
+                          });
+                        }
+                      }
+                    }}
+                    className=" text-white font-medium text-xs sm:text-sm lg:text-base pb-3.5 hover:scale-105 transition-all duration-300 flex items-center gap-x-1.5"
+                  >
+                    <span className="block">
+                      <Image
+                        src={i.icon}
+                        alt="icon"
+                        className=" size-4 sm:size-5 lg:size-6"
+                      />
+                    </span>
+                    {i.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

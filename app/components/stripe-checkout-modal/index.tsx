@@ -101,7 +101,7 @@ export default function StripeCheckoutModal({
                 <>
                   {/* Logo */}
                   <div className="flex justify-center ">
-                    <Image src={logo} alt="logo" height={120} />
+                    <Image src={logo} alt="logo" height={120} placeholder='blur'/>
                   </div>
 
                   <p className="text-center text-sm text-gray-500 mb-6">
