@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import supportImage from "@/public/images/support.png";
+import supportImageSmall from "@/public/images/supportImageSmall.png";
 import supportLogo from "@/public/images/supportLogo.png";
 import { Input } from "../components/atoms/Input";
 import { SubmitEvent, useCallback, useState } from "react";
@@ -91,7 +92,7 @@ const Donate = () => {
       relative
       flex flex-col lg:justify-end
       w-full
-       h-[20vh] sm:h-40 md:h-[30vh]
+       h-[153px] sm:h-40 md:h-[30vh]
       lg:h-auto
       lg:w-117.5
       lg:min-w-[35%] lg:max-w-[40%]
@@ -105,7 +106,15 @@ const Donate = () => {
               alt="Support Our Mission"
               fill
               placeholder="blur"
-              className="object-cover object-center"
+              className="object-cover object-center max-md:hidden block"
+              priority
+            />
+            <Image
+              src={supportImageSmall}
+              alt="Support Our Mission"
+              fill
+              placeholder="blur"
+              className=" object-cover  max-md:block hidden"
               priority
             />
           </div>
