@@ -100,8 +100,13 @@ export default function StripeCheckoutModal({
               ) : (
                 <>
                   {/* Logo */}
-                  <div className="flex justify-center ">
-                    <Image src={logo} alt="logo" height={120} placeholder='blur'/>
+                  <div className="flex justify-center -mb-7">
+                    <Image
+                      src={logo}
+                      alt="logo"
+                      height={120}
+                      placeholder="blur"
+                    />
                   </div>
 
                   <p className="text-center text-sm text-gray-500 mb-6">
@@ -116,16 +121,21 @@ export default function StripeCheckoutModal({
                     onChange={(e) => setAmount(Number(e.target.value))}
                   />
 
-                  <Elements 
-                    stripe={stripePromise} 
-                    options={{ 
-                      mode: "payment", 
-                      amount: amount ? Math.max(Math.round(amount * 100), 100) : 1000, 
+                  <Elements
+                    stripe={stripePromise}
+                    options={{
+                      mode: "payment",
+                      amount: amount
+                        ? Math.max(Math.round(amount * 100), 100)
+                        : 1000,
                       currency: "usd",
-                      appearance: { theme: 'stripe' }
+                      appearance: { theme: "stripe" },
                     }}
                   >
-                    <PaymentForm amount={amount} onSuccess={() => setSuccess(true)} />
+                    <PaymentForm
+                      amount={amount}
+                      onSuccess={() => setSuccess(true)}
+                    />
                   </Elements>
                 </>
               )}
@@ -137,7 +147,13 @@ export default function StripeCheckoutModal({
   );
 }
 
-function PaymentForm({ amount, onSuccess }: { amount: number | null, onSuccess: () => void }) {
+function PaymentForm({
+  amount,
+  onSuccess,
+}: {
+  amount: number | null;
+  onSuccess: () => void;
+}) {
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
@@ -169,9 +185,9 @@ function PaymentForm({ amount, onSuccess }: { amount: number | null, onSuccess: 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount }),
       });
-      
+
       const data = await res.json();
-      
+
       if (!res.ok || data.error) {
         throw new Error(data.error || "Failed to initialize payment");
       }
