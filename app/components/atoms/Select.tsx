@@ -45,6 +45,17 @@ export const Select = ({
 
   return (
     <div ref={containerRef} className="relative w-full">
+      {required && (
+        <input
+          tabIndex={-1}
+          autoComplete="off"
+          className="absolute inset-0 w-full h-full opacity-0 -z-10"
+          value={value}
+          onChange={() => {}}
+          onFocus={() => setIsOpen(true)}
+          required={required}
+        />
+      )}
       <label className="block text-[#1b2a4e] font-medium text-sm sm:mb-2 mb-1">
         {label}
       </label>

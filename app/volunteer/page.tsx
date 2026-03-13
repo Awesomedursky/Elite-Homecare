@@ -174,6 +174,7 @@ const Donate = () => {
               value={phone}
               onChange={setPhone}
               placeholder="Preferred for quicker follow-up"
+              required
             />
 
             <Input
@@ -192,6 +193,7 @@ const Donate = () => {
               options={HOW_WOULD_YOU_LIKE_TO_HELP}
               value={howToHelp}
               onChange={setHowToHelp}
+              required
             />
 
             <Textarea
@@ -199,6 +201,7 @@ const Donate = () => {
               label="Tell Us More"
               value={tellUsMore}
               onChange={setTellUsMore}
+              required
             />
 
             <Button text="Submit Interest" loading={isSubmitting} />

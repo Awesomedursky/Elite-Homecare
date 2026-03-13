@@ -140,7 +140,7 @@ export const Navbar = () => {
   return (
     <nav
       className={`sticky top-0 z-50 bg-background/80 backdrop-blur-md transition-all duration-300 ${
-        isScrolled ? "shadow-[0_4px_20px_rgba(0,0,0,0.06)]" : ""
+        isScrolled ? "shadow-[0_1px_1px_rgba(0,0,0,0.06)]" : ""
       }`}
     >
       <div className=" mx-auto  2xl:max-w-7xl xl:max-w-6xl w-full">

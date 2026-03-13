@@ -166,6 +166,7 @@ const ContactUs = () => {
                 options={WHO_CARE_FOR_OPTIONS}
                 value={whoCareFor}
                 onChange={setWhoCareFor}
+                required
               />
 
               {/* Type of care needed - Multi-select */}
@@ -175,6 +176,7 @@ const ContactUs = () => {
                 options={TYPE_OF_CARE_OPTIONS}
                 value={typeOfCare}
                 onChange={setTypeOfCare}
+                required
               />
 
               <Textarea

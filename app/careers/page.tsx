@@ -163,7 +163,7 @@ export default function CareersPage() {
                     onUploading={setIsUploading}
                     onError={(msg) => showToast(msg, "error")}
                     onSuccess={(msg) => showToast(msg, "success")}
-                    // required
+                    required
                   />
 
                   <Input
@@ -225,6 +225,7 @@ export default function CareersPage() {
                     onChange={setExperienceNote}
                     placeholder="Briefly share about your caregiving experience, background and interest."
                     rows={4}
+                    required
                   />
 
                   <p className="text-[#64748B] text-xs">

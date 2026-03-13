@@ -15,6 +15,7 @@ type MultiSelectProps = {
   options: MultiSelectOption[];
   value: string[];
   onChange: (selected: string[]) => void;
+  required?: boolean;
 };
 
 export const MultiSelect = ({
@@ -23,6 +24,7 @@ export const MultiSelect = ({
   options,
   value,
   onChange,
+  required = false,
 }: MultiSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -58,6 +60,17 @@ export const MultiSelect = ({
 
   return (
     <div ref={containerRef} className="relative w-full">
+      {required && (
+        <input
+          tabIndex={-1}
+          autoComplete="off"
+          className="absolute inset-0 w-full h-full opacity-0 -z-10"
+          value={value.join(",")}
+          onChange={() => {}}
+          onFocus={() => setIsOpen(true)}
+          required={required}
+        />
+      )}
       <label className="block text-[#1b2a4e] font-medium text-sm sm:mb-2 mb-1">
         {label}
       </label>
