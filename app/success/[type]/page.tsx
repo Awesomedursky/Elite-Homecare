@@ -42,7 +42,7 @@ const SuccessPage = async ({ params }: PageProps) => {
 
   return (
     <section className="py-12 flex items-center justify-center bg-gray-50 px-6">
-      <div className="max-w-166.25 w-full bg-white rounded-xl md:rounded-[30px] shadow-lg p-6 md:p-12 text-center space-y-4 md:space-y-6">
+      <div className="max-w-166.25 w-full bg-white rounded-xl md:rounded-[30px] shadow-[0_0.5px_4px_0.5px_#D8E0E9] p-6 md:p-12 text-center space-y-4 md:space-y-6">
         <h1 className="text-xl md:text-4xl font-bold text-[#002270]">
           {content.title}
         </h1>
