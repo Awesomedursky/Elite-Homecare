@@ -201,6 +201,7 @@ const ContactUs = () => {
               {/* Marketing consent checkbox */}
               <div className="flex items-start gap-3">
                 <input
+                  required
                   id="marketingConsent"
                   type="checkbox"
                   checked={marketingConsent}
